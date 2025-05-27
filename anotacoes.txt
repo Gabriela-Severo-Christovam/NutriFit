@@ -2,3 +2,11 @@ travar o header
 anotar ideias aqui
 estou deixando de comentar, quando houver tempo e comentar tudo
 perguntar pro ivo se é antisemântico usar mais class=main, porém estou utilizando
+
+
+
+
+
+fazer depois;
+usar carrosel de fotos do materialize
+fazer filtro de produtos
