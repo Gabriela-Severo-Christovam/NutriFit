@@ -3,7 +3,7 @@ from hashlib import sha256
 from flask import session
 
 class Usuario:
-    def cadastro_usuario(email, nome, senha):
+    def cadastro_usuario(email, nome, telefone, endereco, numero, senha):
        
         #Criptografando senha
         senha =  sha256(senha.encode()).hexdigest()
@@ -16,11 +16,11 @@ class Usuario:
 
         # Criando o sql que será executado
         sql = """INSERT INTO tbUsuarios
-                    (email, nome, senha)
+                    (email, nome, telefone, endereco, numero, senha)
                 VALUES
-                    (%s, %s, %s)"""
+                    (%s, %s, %s, %s, %s, %s)"""
                 
-        valores = (email, nome, senha)
+        valores = (email, nome, telefone, endereco, numero, senha)
     
         # Executando o comnado sql
         cursor.execute(sql,valores)
