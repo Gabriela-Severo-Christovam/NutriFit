@@ -33,7 +33,7 @@ create table tbFotosProdutos (
     cod_foto INT AUTO_INCREMENT PRIMARY KEY,
     cod_produto INT,
     FOREIGN KEY (cod_produto) REFERENCES tbProdutos(cod_produto),
-    url VARCHAR(80)
+    url VARCHAR(200)
 );
 
 
@@ -52,7 +52,7 @@ create table tbCarrinho (
    
 );
 
-
+# INSERINDO CATEGORIAS
 INSERT INTO tbCategoria (descricao)
 VALUES ('CREATINA'),
        ('WHEY'),
@@ -101,6 +101,38 @@ INSERT INTO tbProdutos(nome, descricao, preco, cod_categorias)
 VALUES ('Blender - Transparente', 'Com design transparente e moderno, a blender é ideal para preparar e consumir seus shakes e suplementos. Leve, resistente e fácil de limpar, é perfeita para o dia a dia na academia ou onde você estiver.', 70.90, 5),
 	   ('Bolsa para treino', 'Funcional e resistente, a bolsa de treino oferece espaço ideal para roupas, tênis e acessórios. Com design moderno e compartimentos práticos, é perfeita para acompanhar você na academia, no esporte ou no dia a dia.', 100.00, 5),
 	   ('Fita Strap', 'A strap oferece firmeza e proteção para punhos ou articulações, ajudando a prevenir lesões e melhorar a performance em exercícios de força. Confortável e resistente, é essencial para treinos mais intensos.', 19.90, 5);
+
+# INSERINDO FOTOS DAS CREATINAS
+INSERT INTO tbFotosProdutos (cod_produto, url)
+VALUES (1, 'https://www.oceandrop.com.br/media/catalog/product/cache/e72cb892da97e5433e4edef74373290e/6/4/648x908-creatina300_4.png'),
+	   (1,'https://www.oceandrop.com.br/media/catalog/product/cache/b8e80b8ab26713fe9633d84839545a38/6/4/648x908-super-box-creatina.png'),
+	   (1, 'https://www.oceandrop.com.br/media/catalog/product/cache/b8e80b8ab26713fe9633d84839545a38/6/4/648x908-creatina300-tabela.jpg'),
+       (2, 'https://www.gsuplementos.com.br/upload/produto/layout/70/produto1-creapure250-v2.webp'),
+       (2, 'https://http2.mlstatic.com/D_NQ_NP_864751-MLB69884251258_062023-O-creatina-250g-creapure-growth-supplements.webp'),
+       (2, 'https://a-static.mlcdn.com.br/800x600/omega-3-75-caps-creatina-pura-100g-creapure-growth/maxpowersuplementos/10943820408/f09ee9ba354f7627685592c23da85d26.jpeg');
+
+# INSERINDO FOTOS DOS WHEY
+INSERT INTO tbFotosProdutos (cod_produto, url)
+VALUES (3, 'https://m.media-amazon.com/images/I/61zXQDYWmcL._AC_SX679_.jpg'),
+	   (3, 'https://lojamaxtitanium.vtexassets.com/arquivos/ids/157349/100-whey-protein-max-titanium-dr-peanut-900g-avela-2.jpg?v=638794607032530000'),
+       (3, 'https://m.media-amazon.com/images/I/61c5axnIEwL._AC_SX679_.jpg'),
+       (4, 'https://sanavita.vtexassets.com/arquivos/ids/157824-1600-auto?v=638736935464570000&width=1600&height=auto&aspect=true');
+     
+     
+# INSERINDO FOTOS PRETREINO
+INSERT INTO tbFotosProdutos (cod_produto, url)
+VALUES (5, 'https://lojamaxtitanium.vtexassets.com/arquivos/ids/158609-1920-0/MAX-IMAGENS-LANCAMENTOS-TDZ.jpg.jpg?v=638804071627000000'),
+	   (6, 'https://http2.mlstatic.com/D_NQ_NP_2X_658224-MLU74927819655_032024-F.webp');
+       
+# INSERINDO MULTIVITAMINICO
+INSERT INTO tbFotosProdutos (cod_produto, url)
+VALUES (7, 'https://www.gsuplementos.com.br/upload/produto/layout/107/produto-principal-v2.webp');
+
+# INSERINDO ACESSORIOS
+INSERT INTO tbFotosProdutos (cod_produto, url)
+VALUES (8, 'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcQ-3a5nRiZSXAUSo-5_4B4LVpsy6Incp8fW4upm2U6Xrz9w0rFApvure551TC1L9fJMB0RdiF8jfcIBG0jj4UknXAjZTys0OZoqGlEZHK2YpX75qZjqqyndn1E'),
+	   (9, 'https://http2.mlstatic.com/D_NQ_NP_2X_726479-MLB69497449602_052023-F-mochila-mala-costas-viagem-transversal-fitness-impermeavel.webp'),
+       (10, 'https://www.gsuplementos.com.br/upload/produto/imagem/fita-strap-faixa-preta-growth-manuscrito-par-growth-supplements-1.webp');
 
 
 # Carrinho com usuario e produto
