@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Página Inicial</title>
 
-                                <!-- este bloco será padrão para todas aspáginas (p enquanto) -->
-<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- este bloco será padrão para todas aspáginas (p enquanto) -->
+  <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
   <!-- google fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
 
@@ -18,98 +19,102 @@
 
   <!-- link p css externo -->
   <link rel="stylesheet" href="/static/style.css" />
-<!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 </head>
 
 <body>
-    <header class="header">
-      <div class="header__container container d-flex justify-content-between align-items-center">
-        <div class="header__logo"><img alt="Logo da Empresa" class="header__logo-image"></div>
-        <nav class="header__nav">
-          <a href="#" class="header__link">Cadastrar</a>
-          <a href="#" class="header__link">Entrar</a>
-        </nav>
+  <!-- header, simples e será padrão também -->
+  <!-- perguntar se pode classe com o mesmo nome -->
+  <header class="header">
+    <div class="header__container container d-flex justify-content-between align-items-center">
+      <div class="header__logo"><img alt="Logo da Empresa" class="header__logo-image"></div>
+      <nav class="header__nav">
+        <a href="#" class="header__link">Cadastrar</a>
+        <a href="#" class="header__link">Entrar</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- main class= main é semântico? peruntar pro ivo e corrigir na próxima aula -->
+  <main class="main">
+    <!-- carrosel de fotos-->
+    <section class="banner">
+      <div class="banner__container d-flex justify-content-between align-items-center">
+        <button class="banner__arrow banner__arrow--left">&lt;</button>
+
+        <!-- perguntar p ivo como chamar as imagens dentro do carrossel ou utilizar materialize neste trecho p fazer  -->
+        <div class="banner__image"><img alt="" class=""></div>
+
+        <button class="banner__arrow banner__arrow--right">&gt;</button>
       </div>
-    </header>
-  
-    <main class="main">
-  <!-- carrosel de fotos-->
-      <section class="banner">
-        <div class="banner__container d-flex justify-content-between align-items-center">
-          <button class="banner__arrow banner__arrow--left">&lt;</button>
+    </section>
 
-          <!-- perguntare pro ivo como chamar as imagens dentro do carrossel ou utilizar materialize neste trecho p fazer o carrosel -->
-          <div class="banner__image"><img alt="" class=""></div>
-
-          <button class="banner__arrow banner__arrow--right">&gt;</button>
-        </div>
-      </section>
-  
-      <!--  section de detalhes do site (benefícios fictícios) -->
-        <!-- alterei o nome de alguns fictícios para fazer jus ao nosso site -->
-      <section class="benefits">
-        <div class="benefits__container container d-flex justify-content-around text-center flex-wrap">
-          <div class="benefits__item">
-            <i class="bi bi-truck benefits__icon"></i>
-            <div class="benefits__text">
-              <h6 class="benefits__title">Entrega Rápida</h6>
-              <p class="benefits__desc">Para todo o País</p>
-            </div>
-          </div>
-          <div class="benefits__item">
-            <i class="bi bi-tag benefits__icon"></i>
-            <div class="benefits__text">
-              <h6 class="benefits__title">5% Off</h6>
-              <p class="benefits__desc">Pagando no cartão PIXFITNESS</p>
-            </div>
-          </div>
-          <div class="benefits__item">
-            <i class="bi bi-shield-check benefits__icon"></i>
-            <div class="benefits__text">
-              <h6 class="benefits__title">Sua compra segura</h6>
-              <p class="benefits__desc">Com o Mercado NUTRIFITNESS</p>
-            </div>
-          </div>
-          <div class="benefits__item">
-            <i class="bi bi-whatsapp benefits__icon"></i>
-            <div class="benefits__text">
-              <h6 class="benefits__title">Contato exclusivo</h6>
-              <p class="benefits__desc">Via WhatsApp</p>
-            </div>
+    <!--  section de detalhes do site (benefícios fictícios) -->
+    <!-- alterei o nome de alguns fictícios para fazer jus ao nosso site -->
+    <section class="benefits">
+      <div class="benefits__container container d-flex justify-content-around text-center flex-wrap">
+        <div class="benefits__item">
+          <i class="bi bi-truck benefits__icon"></i>
+          <div class="benefits__text">
+            <h6 class="benefits__title">Entrega Rápida</h6>
+            <p class="benefits__desc">Para todo o País</p>
           </div>
         </div>
-      </section>
-  
-      <!-- section produtos -->
-       <!-- trocar os pontinhos p link das imagens e o nome delas(produtos e nomes)-->
-      <section class="products">
-        <div class="products__container container d-flex flex-wrap justify-content-around gap-3 py-4">
-          <article class="products__item">
-            <img src="" alt="... " class="products__image">
-          </article>
-          <article class="products__item">
-            <img src="" alt="... " class="products__image">
-          </article>
-          <article class="products__item">
-            <img src="" alt="..." class="products__image">
-          </article>
-          <article class="products__item">
-            <img src="" alt="..." class="products__image">
-          </article>
+        <div class="benefits__item">
+          <i class="bi bi-tag benefits__icon"></i>
+          <div class="benefits__text">
+            <h6 class="benefits__title">5% Off</h6>
+            <p class="benefits__desc">Pagando no cartão PIXFITNESS</p>
+          </div>
+        </div>
+        <div class="benefits__item">
+          <i class="bi bi-shield-check benefits__icon"></i>
+          <div class="benefits__text">
+            <h6 class="benefits__title">Sua compra segura</h6>
+            <p class="benefits__desc">Com o Mercado NUTRIFITNESS</p>
+          </div>
+        </div>
+        <div class="benefits__item">
+          <i class="bi bi-whatsapp benefits__icon"></i>
+          <div class="benefits__text">
+            <h6 class="benefits__title">Contato exclusivo</h6>
+            <p class="benefits__desc">Via WhatsApp</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- section produtos -->
+    <!-- trocar os pontinhos p link das imagens e o nome delas(produtos e nomes)-->
+    <section class="products">
+      <div class="products__container container d-flex flex-wrap justify-content-around gap-3 py-4">
+        <article class="products__item">
+          <img src="" alt="... " class="products__image">
+        </article>
+        <article class="products__item">
+          <img src="" alt="... " class="products__image">
+        </article>
+        <article class="products__item">
+          <img src="" alt="..." class="products__image">
+        </article>
+        <article class="products__item">
+          <img src="" alt="..." class="products__image">
+        </article>
         <div class="products__button-wrapper text-center mt-3">
           <button class="products__button">Ver produtos</button>
         </div>
-      </section>
-    </main>
-  
-    <!-- colocar o whatsapp de algúem apenas p embelezar o site -->
-    <footer class="footer">
-      <div class="footer__container container text-center py-3">
-        <a href="#" class="footer__link">TikTok</a>
-        <a href="#" class="footer__link">Instagram</a>
-        <a href="#" class="footer__link">Whatsapp</a>
-      </div>
-    </footer>
+    </section>
+  </main>
+
+  <!-- colocar o whatsapp de algúem apenas p embelezar o site -->
+  <footer class="footer">
+    <div class="footer__container container text-center py-3">
+      <a href="#" class="footer__link">TikTok</a>
+      <a href="#" class="footer__link">Instagram</a>
+      <a href="#" class="footer__link">Whatsapp</a>
+    </div>
+  </footer>
 
 </body>
+
 </html>
