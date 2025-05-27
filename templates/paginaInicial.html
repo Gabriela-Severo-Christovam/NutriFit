@@ -19,78 +19,83 @@
 </head>
 
 <body>
-  <header>
-    <div>
-      <div>LOGO</div>
-      <nav>
-        <a href="#">Cadastrar</a>
-        <a href="#">Entrar</a>
-      </nav>
-    </div>
-  </header>
 
-  <main>
-    <section>
-      <div>
-        <button></button>
-        <div></div>
-        <button></button>
+    <header class="header">
+      <div class="header__container container d-flex justify-content-between align-items-center">
+        <div class="header__logo">LOGO</div>
+        <nav class="header__nav">
+          <a href="#" class="header__link">Cadastrar</a>
+          <a href="#" class="header__link">Entrar</a>
+        </nav>
       </div>
-    </section>
-
-    <section>
-      <div>
-        <div>
-          <i></i>
-          <div>
-            <h6>Entrega Rápida</h6>
-            <p>Para todo o País</p>
+    </header>
+  
+    <main class="main">
+  <!-- carrosel de fotos-->
+      <section class="banner">
+        <div class="banner__container d-flex justify-content-between align-items-center">
+          <button class="banner__arrow banner__arrow--left">&lt;</button>
+          <div class="banner__image"></div>
+          <button class="banner__arrow banner__arrow--right">&gt;</button>
+        </div>
+      </section>
+  
+      <!--  section de detalhes do site -->
+      <section class="benefits">
+        <div class="benefits__container container d-flex justify-content-around text-center flex-wrap">
+          <div class="benefits__item">
+            <i class="bi bi-truck benefits__icon"></i>
+            <div class="benefits__text">
+              <h6 class="benefits__title">Entrega Rápida</h6>
+              <p class="benefits__desc">Para todo o País</p>
+            </div>
+          </div>
+          <div class="benefits__item">
+            <i class="bi bi-tag benefits__icon"></i>
+            <div class="benefits__text">
+              <h6 class="benefits__title">5% Off</h6>
+              <p class="benefits__desc">Pagando no PIX</p>
+            </div>
+          </div>
+          <div class="benefits__item">
+            <i class="bi bi-shield-check benefits__icon"></i>
+            <div class="benefits__text">
+              <h6 class="benefits__title">Sua compra segura</h6>
+              <p class="benefits__desc">Com o Mercado Pago</p>
+            </div>
+          </div>
+          <div class="benefits__item">
+            <i class="bi bi-whatsapp benefits__icon"></i>
+            <div class="benefits__text">
+              <h6 class="benefits__title">Contato exclusivo</h6>
+              <p class="benefits__desc">Via WhatsApp</p>
+            </div>
           </div>
         </div>
-        <div>
-          <i></i>
-          <div>
-            <h6>5% Off</h6>
-            <p>Pagando no PIX</p>
-          </div>
+      </section>
+  
+      <!-- section produtos -->
+      <section class="products">
+        <div class="products__container container d-flex justify-content-around flex-wrap">
+          <div class="products__item"></div>
+          <div class="products__item"></div>
+          <div class="products__item"></div>
+          <div class="products__item"></div>
         </div>
-        <div>
-          <i></i>
-          <div>
-            <h6>Sua compra segura</h6>
-            <p>Com o Mercado Pago</p>
-          </div>
+        <div class="products__button-wrapper text-center mt-3">
+          <button class="products__button">Ver produtos</button>
         </div>
-        <div>
-          <i></i>
-          <div>
-            <h6>Contato exclusivo</h6>
-            <p>Via WhatsApp</p>
-          </div>
-        </div>
+      </section>
+    </main>
+  
+    <footer class="footer">
+      <div class="footer__container container text-center py-3">
+        <a href="#" class="footer__link">TikTok</a>
+        <a href="#" class="footer__link">Instagram</a>
+        <a href="#" class="footer__link">Whatsapp</a>
       </div>
-    </section>
-
-    <section>
-      <div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-      <div>
-        <button>Ver produtos</button>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div>
-      <a href="#">TikTok</a>
-      <a href="#">Instagram</a>
-      <a href="#">Whatsapp</a>
-    </div>
-  </footer>
+    </footer>
+  
   
 </body>
 </html>
