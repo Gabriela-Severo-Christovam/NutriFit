@@ -12,3 +12,4 @@ usar carrosel de fotos do materialize
 fazer filtro de produtos
 por descrição do produto abaixo dele
 trocar alt das imagens da pagina principal para nome do produto que irá aparecer
+fazer um css separado para cada html (ter um padrão base para header e footer, já que todos possuem certas formatações iguais)
