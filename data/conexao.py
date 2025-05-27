@@ -14,8 +14,8 @@ class Conexao:
         # Criando a conexão com o banco de dados
         conexao = mysql.connector.connect(host = "localhost",
                                         port = 3306,
-                                        user = "3ds",
+                                        user = "root",
                                         password = "root",
-                                        database = "db_feedback")
+                                        database = "dbNutriFit")
         
         return conexao
