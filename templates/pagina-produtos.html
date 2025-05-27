@@ -23,53 +23,54 @@
 </head>
 
 <body>
-    <header>
-        <div>
-            <!-- logo também é padrão -->
-            <div class="header__logo"><img alt="Logo da Empresa" class="header__logo-image"></div>
-            <div>
-                <span>olá, Fulano!</span>
-                <a href="#">Meu carrinho</a>
-                <a href="pagina-inicial.html">
-                    <i></i>
-                </a>
-            </div>
+
+    <header class="header">
+      <div class="header__container container d-flex justify-content-between align-items-center py-3">
+        <div class="header__logo">
+          <img src="" alt="Logo da Empresa" class="header__logo-image">
         </div>
+        <nav class="header__nav d-flex gap-3 align-items-center">
+          <span class="header__user">Olá, Colocar o nome aqui!</span>
+          <a href="#" class="header__link">Meu carrinho</a>
+          <a href="pagina-inicial.html" class="header__link">
+            <i class="bi bi-house-fill"></i>
+          </a>
+        </nav>
+      </div>
     </header>
-
-    <main>
-        <section>
-            <!-- usar esse image de modelo -->
-            <img alt="" class="">
-            </article>
-            <article>
-                <img alt="" class="">
-            </article>
-            <article>
-                <img alt="" class="">
-            </article>
-            <article>
-                <img alt="" class="">
-            </article>
-            <article>
-                <img alt="" class="">
-            </article>
-            <article>
-                <img alt="" class="">
-            </article>
-        </section>
-        </section>
-    </main>
-
-    <!-- footer vai ser padrão em todos -->
-    <footer class="footer">
-        <div class="footer__container container text-center py-3">
-            <a href="#" class="footer__link">TikTok</a>
-            <a href="#" class="footer__link">Instagram</a>
-            <a href="#" class="footer__link">Whatsapp</a>
+  
+    <main class="main">
+      <section class="products">
+        <div class="products__container container d-flex flex-wrap justify-content-around gap-3 py-4">
+          <article class="products__item">
+            <img src="" alt="... " class="products__image">
+          </article>
+          <article class="products__item">
+            <img src="" alt="... " class="products__image">
+          </article>
+          <article class="products__item">
+            <img src="" alt="..." class="products__image">
+          </article>
+          <article class="products__item">
+            <img src="" alt="..." class="products__image">
+          </article>
+          <article class="products__item">
+            <img src="" alt="..." class="products__image">
+          </article>
+          <article class="products__item">
+            <img src="" alt="..." class="products__image">
+          </article>
         </div>
+      </section>
+    </main>
+  
+    <footer class="footer">
+      <div class="footer__container container text-center py-3">
+        <a href="#" class="footer__link">TikTok</a>
+        <a href="#" class="footer__link">Instagram</a>
+        <a href="#" class="footer__link">Whatsapp</a>
+      </div>
     </footer>
 
 </body>
-
 </html>
