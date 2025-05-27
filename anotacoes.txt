@@ -1,7 +1,7 @@
 travar o header 
 anotar ideias aqui
 estou deixando de comentar, quando houver tempo e comentar tudo
-perguntar pro ivo se é antisemântico usar mais class=main, porém estou utilizando
+
 
 
 
@@ -10,3 +10,5 @@ perguntar pro ivo se é antisemântico usar mais class=main, porém estou utiliz
 fazer depois;
 usar carrosel de fotos do materialize
 fazer filtro de produtos
+por descrição do produto abaixo dele
+trocar alt das imagens da pagina principal para nome do produto que irá aparecer

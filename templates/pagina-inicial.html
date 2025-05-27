@@ -24,36 +24,60 @@
 
 <body>
   <!-- header, simples e será padrão também -->
-  <!-- perguntar se pode classe com o mesmo nome -->
-  <header class="header">
+  <header>
     <div class="header__container container d-flex justify-content-between align-items-center">
       <div class="header__logo"><img alt="Logo da Empresa" class="header__logo-image"></div>
       <nav class="header__nav">
-        <a href="#" class="header__link">Cadastrar</a>
-        <a href="#" class="header__link">Entrar</a>
+        <a href="pagina-cadastro.html" class="header__link">Cadastrar</a>
+        <a href="pagina-login.html" class="header__link">Entrar</a>
       </nav>
     </div>
   </header>
 
-  <!-- main class= main é semântico? peruntar pro ivo e corrigir na próxima aula -->
-  <main class="main">
-    <!-- carrosel de fotos-->
+  <main>
+    <!-- carrossel de fotos vindo do bootstrap -->
     <section class="banner">
-      <div class="banner__container d-flex justify-content-between align-items-center">
-        <button class="banner__arrow banner__arrow--left">&lt;</button>
+      <div id="bannerCarousel" class="banner__carousel carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner banner__carousel-inner">
 
-        <!-- perguntar p ivo como chamar as imagens dentro do carrossel ou utilizar materialize neste trecho p fazer  -->
-        <div class="banner__image"><img alt="" class=""></div>
+          <!--  primeira img a aparecer-->
+          <div class="carousel-item active banner__carousel-item">
+            <img src="" class="d-block w-100 banner__image" alt="nome do produto">
+          </div>
 
-        <button class="banner__arrow banner__arrow--right">&gt;</button>
+          <!-- segunda img a aparecer -->
+          <div class="carousel-item banner__carousel-item">
+            <img src="" class="d-block w-100 banner__image" alt="nome do produto">
+          </div>
+
+          <!-- terceira img a aparecer -->
+          <div class="carousel-item banner__carousel-item">
+            <img src="" class="d-block w-100 banner__image" alt="nome do produto">
+          </div>
+
+        </div>
+
+        <!-- controle para passar imagens -->
+        <button class="carousel-control-prev banner__arrow banner__arrow--left" type="button"
+          data-bs-target="#bannerCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next banner__arrow banner__arrow--right" type="button"
+          data-bs-target="#bannerCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Próximo</span>
+        </button>
       </div>
     </section>
 
     <!--  section de detalhes do site (benefícios fictícios) -->
     <!-- alterei o nome de alguns fictícios para fazer jus ao nosso site -->
+    <!-- parte estética do site -->
     <section class="benefits">
       <div class="benefits__container container d-flex justify-content-around text-center flex-wrap">
         <div class="benefits__item">
+          <!-- ícone -->
           <i class="bi bi-truck benefits__icon"></i>
           <div class="benefits__text">
             <h6 class="benefits__title">Entrega Rápida</h6>
@@ -84,25 +108,25 @@
       </div>
     </section>
 
-    <!-- section produtos -->
-    <!-- trocar os pontinhos p link das imagens e o nome delas(produtos e nomes)-->
+    <!-- section produtos, exibe os suplementos e suas imagens sem descrição (adiiconar) -->
     <section class="products">
       <div class="products__container container d-flex flex-wrap justify-content-around gap-3 py-4">
         <article class="products__item">
-          <img src="" alt="... " class="products__image">
+          <img src="" alt="" class="products__image">
         </article>
         <article class="products__item">
-          <img src="" alt="... " class="products__image">
+          <img src="" alt="" class="products__image">
         </article>
         <article class="products__item">
-          <img src="" alt="..." class="products__image">
+          <img src="" alt="" class="products__image">
         </article>
         <article class="products__item">
-          <img src="" alt="..." class="products__image">
+          <img src="" alt="" class="products__image">
         </article>
+
         <div class="products__button-wrapper text-center mt-3">
           <a href="/paginaprodutos">
-          <button class="products__button">Ver produtos</button>
+            <button class="products__button">Ver produtos</button>
           </a>
         </div>
     </section>
@@ -111,12 +135,11 @@
   <!-- colocar o whatsapp de algúem apenas p embelezar o site -->
   <footer class="footer">
     <div class="footer__container container text-center py-3">
-      <a href="#" class="footer__link">TikTok</a>
-      <a href="#" class="footer__link">Instagram</a>
-      <a href="#" class="footer__link">Whatsapp</a>
+      <a href="#" class="footer__link">TikTok <i class="bi bi-tiktok"></i></a>
+      <a href="#" class="footer__link">Instagram <i class="bi bi-instagram"></i></a>
+      <a href="#" class="footer__link">Whatsapp <i class="bi bi-whatsapp"></i></a>
     </div>
   </footer>
 
 </body>
-
 </html>
