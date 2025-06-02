@@ -42,7 +42,7 @@ class Usuario:
         cursor = conexao.cursor(dictionary = True)
 
         # Criando o sql que será executado
-        sql = "SELECT email, nome, senha  FROM tbUsuarios;"
+        sql = "SELECT email, nome, senha  FROM tbUsuario;"
 
         #Executando o comando sql
         cursor.execute(sql)        
@@ -68,7 +68,7 @@ class Usuario:
         cursor = conexao.cursor(dictionary=True)
 
         # Criando o sql que será executado
-        sql = "SELECT email, nome FROM tbUsuarios WHERE email =  %s AND binary senha = %s;"
+        sql = "SELECT email, nome FROM tbUsuario WHERE email =  %s AND binary senha = %s;"
 
         valores = (email, senha)
 

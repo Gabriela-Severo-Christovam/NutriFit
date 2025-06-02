@@ -2,13 +2,12 @@ create database dbNutriFit;
 use dbNutriFit;
 
 create table tbUsuario (
-    email VARCHAR(80),
+    email VARCHAR(80) PRIMARY KEY,
     nome VARCHAR (30) NOT NULL,
-    telefone VARCHAR(10),
+    telefone VARCHAR(15),
     endereco VARCHAR(80) NOT NULL,
     numero INT NOT NULL,
-    senha VARCHAR(8) NOT NULL,
-    id int PRIMARY KEY
+    senha VARCHAR(100) NOT NULL
 ) ;
 
 # AUMENTAR TAMANHO DESCRICAO
@@ -45,9 +44,9 @@ create table tbLogin (
 
 create table tbCarrinho (
     cod_carrinho INT AUTO_INCREMENT PRIMARY KEY,
-    id INT,
+    email VARCHAR(80),
     cod_produto INT,
-    FOREIGN KEY (id) REFERENCES tbUsuario(id),
+    FOREIGN KEY (email) REFERENCES tbUsuario(email),
     FOREIGN KEY (cod_produto) REFERENCES tbProdutos(cod_produto)
    
 );
@@ -146,7 +145,7 @@ FROM
     tbCarrinho
 INNER JOIN
     tbUsuario
-    ON tbCarrinho.id = tbUsuario.id
+    ON tbCarrinho.email = tbUsuario.email
 INNER JOIN
     tbProdutos
     ON tbCarrinho.cod_produto = tbProdutos.cod_produto;

@@ -25,7 +25,7 @@ class Carrinho:
         cursor.close()
         conexao.close()
 
-    def recuperar_requisitos():
+    def recuperar_carrinho():
      
         # Criando a conexão com o banco de dados
         conexao = Conexao.criar_conexao()
@@ -60,7 +60,7 @@ class Carrinho:
         return resultado
    
  
-    def deletar_requisito(cod_requisito):
+    def deletar_carrinho(cod_requisito):
           # Criando a conexão com o banco de dados
         conexao = Conexao.criar_conexao()
 
