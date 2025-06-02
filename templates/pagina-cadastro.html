@@ -31,9 +31,9 @@
                 <img src="..." alt="Logo da Empresa" class="header__logo-image">
             </div>
             <nav class="header__nav d-flex gap-3 align-items-center">
-                <a href="pagina-login.html" class="header__link">Já possui uma conta? Entrar <i class="bi bi-person-lines-fill"></i></a>
+                <a href="/paginalogin" class="header__link">Já possui uma conta? Entrar <i class="bi bi-person-lines-fill"></i></a>
                 <!-- retornar a página principal -->
-                <a href="pagina-inicial.html" class="header__link">Voltar a página inicial <i class="bi bi-house-fill"></i></a>
+                <a href="/paginainicial" class="header__link">Voltar a página inicial <i class="bi bi-house-fill"></i></a>
             </nav>
         </div>
     </header>
@@ -42,41 +42,41 @@
   <main>
     <section class="register">
         <h2 class="register__title">Dados Pessoais*</h2>
-        <form class="register__form">
+        <form class="register__form" action="/post/cadastrarusuario" method="post">
           <div class="mb-3">
             <label for="email" class="form-label">E-mail:</label>
-            <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail">
+            <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail" name="email">
           </div>
   
           <div class="mb-3">
             <label for="nome" class="form-label">Nome Completo:</label>
-            <input type="text" class="form-control" id="nome" placeholder="Digite seu nome completo">
+            <input type="text" class="form-control" id="nome" placeholder="Digite seu nome completo" name="nome">
           </div>
   
           <div class="mb-3">
             <label for="telefone" class="form-label">Telefone para Contato:</label>
-            <input type="tel" class="form-control" id="telefone" placeholder="(xx) xxxxx-xxxx">
+            <input type="tel" class="form-control" id="telefone" placeholder="(xx) xxxxx-xxxx" name="telefone">
           </div>
   
           <div class="row">
             <div class="mb-3 col-md-8">
               <label for="endereco" class="form-label">Endereço de entrega:</label>
-              <input type="text" class="form-control" id="endereco" placeholder="Rua, Avenida, etc.">
+              <input type="text" class="form-control" id="endereco" placeholder="Rua, Avenida, etc." name="endereco">
             </div>
   
             <div class="mb-3 col-md-4">
               <label for="numero" class="form-label">Nº do endereço:</label>
-              <input type="number" class="form-control" id="numero" placeholder="000">
+              <input type="number" class="form-control" id="numero" placeholder="000" name="numero">
             </div>
           </div>
   
           <div class="mb-3">
             <label for="senha" class="form-label">Senha:</label>
-            <input type="password" class="form-control" id="senha" placeholder="mín de 8 caracteres:">
+            <input type="password" class="form-control" id="senha" placeholder="mín de 8 caracteres:" name="senha">
           </div>
   
           <div class="d-flex justify-content-between gap-2 mt-4">
-            <a href="pagina-inicial.html" class="w-50">
+            <a href="/paginainicial" class="w-50">
               <button type="button" class="btn register__back-btn w-100">Voltar</button>
             </a>
             <button type="submit" class="btn register__btn w-50">Cadastrar</button>

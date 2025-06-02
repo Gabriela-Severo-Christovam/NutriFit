@@ -15,7 +15,7 @@ class Usuario:
         cursor = conexao.cursor()
 
         # Criando o sql que será executado
-        sql = """INSERT INTO tbUsuarios
+        sql = """INSERT INTO tbUsuario
                     (email, nome, telefone, endereco, numero, senha)
                 VALUES
                     (%s, %s, %s, %s, %s, %s)"""
