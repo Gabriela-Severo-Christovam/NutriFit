@@ -18,8 +18,12 @@ def pagina_inicial():
 
 @app.route("/paginaprodutos")
 def pagina_produtos():
-    return render_template("pagina-produtos.html")
+    return redirect("/produtos")
 
+@app.route("/produtos")
+def pagina_recuperar():
+    produtos = Produtos.recuperar_produtos()
+    return render_template("pagina-produtos.html", produtos = produtos)
 
 @app.route("/paginaprodutoespecifico")
 def pagina_produtos_especifico():
