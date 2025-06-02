@@ -1,15 +1,13 @@
-travar o header 
-anotar ideias aqui
 estou deixando de comentar, quando houver tempo e comentar tudo
 
 
 
-
-
-
 fazer depois;
-usar carrosel de fotos do materialize
+usar carrosel de fotos do bootstrap (não é semântico utilizar materialize com bootstrap)
 fazer filtro de produtos
 por descrição do produto abaixo dele
 trocar alt das imagens da pagina principal para nome do produto que irá aparecer
 fazer um css separado para cada html (ter um padrão base para header e footer, já que todos possuem certas formatações iguais)
+adicionar imagem da empresa 
+travar o header e footer
+diminuir o código html com coisas que não estão sendo usadas, como id
