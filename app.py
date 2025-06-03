@@ -96,8 +96,6 @@ def post_comentario():
     # Redireciona para o index
     return redirect("/paginaprodutoespecifico")
 
-@app.route("/produtoespecifico")
-def produto_especifico():
-    return render_template("pagina-produto-especifico.html")
+
 
 app.run()
