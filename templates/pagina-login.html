@@ -45,22 +45,35 @@
       </nav>
     </div>
   </header>
+    <!-- header, simples e será padrão também -->
+    <header>
+        <div class="header__container container d-flex justify-content-between align-items-center py-3">
+            <!-- imagem logo -->
+            <div class="header__logo">
+                <img src="..." alt="Logo da Empresa" class="header__logo-image">
+            </div>
+            <nav class="header__nav d-flex gap-3 align-items-center">
+                <!-- retornar a página principal -->
+                <a href="/paginainicial" class="header__link">Voltar a página inicial <i class="bi bi-house-fill"></i></a>
+            </nav>
+        </div>
+    </header>
 
   <!-- login para usuário, área de recolher dados -->
   <main>
     <section class="login">
-      <form class="login__form">
+      <form class="login__form" action="/post/logar" method="POST">
         <div class="mb-3">
           <label for="email" class="form-label">E-mail:</label>
-          <input type="email" class="form-control" placeholder="Digite seu e-mail">
+          <input type="email" class="form-control" id="email" placeholder="Digite seu e-mail" name="email">
         </div>
         <div class="mb-3">
           <label for="senha" class="form-label">Senha:</label>
-          <input type="password" class="form-control" placeholder="Digite sua senha">
+          <input type="password" class="form-control" id="senha" placeholder="Digite sua senha" name="senha">
         </div>
         <button type="submit" class="btn login__btn mb-3">Entrar</button>
         <p class="text-center">Não possui conta? Cadastre-se:</p>
-        <a href="pagina-cadastro.html"><button type="button" class="btn login__register-btn">Cadastre-se</button></a>
+        <a href="/paginacadastro"><button type="button" class="btn login__register-btn">Cadastre-se</button></a>
       </form>
     </section>
   </main>
