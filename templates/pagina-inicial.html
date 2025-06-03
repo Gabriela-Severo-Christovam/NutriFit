@@ -19,6 +19,15 @@
 
   <!-- link p css externo -->
   <link rel="stylesheet" href="/static/style.css" />
+
+   <!-- Link interno css -->
+   <link rel="stylesheet" href="/static/fonts.css">
+
+   <link rel="stylesheet" href="/static/global.css">
+
+   <link rel="stylesheet" href="/static/reset.css">
+
+   <link rel="stylesheet" href="/static/variables.css">
   <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 </head>
 
@@ -28,7 +37,7 @@
     <!-- caixa da imagem -->
     <div class="header__container container d-flex justify-content-between align-items-center">
       <!-- imagem -->
-      <div class="header__logo"><img alt="Logo da Empresa" class="header__logo-image"></div>
+      <div class="header__logo"><img src="/static/img/Nutrifit logo.png" alt="Logo da Empresa" class="header__logo-image"></div>
       <!-- navegação (botões ul para outras páginas) -->
       <nav class="header__nav">
         {% if session.usuario %}
