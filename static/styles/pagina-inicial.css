@@ -79,7 +79,7 @@ body {
 .benefits {
   display: flex;
   justify-content: space-around;
-  background-color: var(--cor-accent);
+  background-color: var(--cor-white);
   padding: 2rem;
   text-align: center;
 }

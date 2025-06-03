@@ -4,7 +4,3 @@ estou deixando de comentar, quando houver tempo e comentar tudo
 
 fazer depois;
 fazer filtro de produtos
-fazer um css separado para cada html (ter um padrão base para header e footer, já que todos possuem certas formatações iguais)travar o header e footer
-adicionar imagem da empresa 
-diminuir o código html com coisas que não estão sendo usadas, como id
-adicionar sweet alert nos campos do formulário
