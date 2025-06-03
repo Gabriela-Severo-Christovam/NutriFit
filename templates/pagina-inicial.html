@@ -53,26 +53,21 @@
 
   <main>
     <!-- carrossel de fotos vindo do bootstrap -->
+     
     <section class="banner">
+  
       <div id="bannerCarousel" class="banner__carousel carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner banner__carousel-inner">
-
+      {% for produto in produtos %}
           <!--  primeira img a aparecer-->
           <div class="carousel-item active banner__carousel-item">
-            <img src="" class="d-block w-100 banner__image" alt="nome do produto">
+            <img src="{{produto.url_foto}}" class="d-block w-100 banner__image" alt="{{produto.nome_produto}}">           
+            <span>{{produto.nome_produto}}</span>
           </div>
 
-          <!-- segunda img a aparecer -->
-          <div class="carousel-item banner__carousel-item">
-            <img src="" class="d-block w-100 banner__image" alt="nome do produto">
-          </div>
-
-          <!-- terceira img a aparecer -->
-          <div class="carousel-item banner__carousel-item">
-            <img src="" class="d-block w-100 banner__image" alt="nome do produto">
-          </div>
-
+       {% endfor %}
         </div>
+        
 
         <!-- controle para passar imagens -->
         <button class="carousel-control-prev banner__arrow banner__arrow--left" type="button"

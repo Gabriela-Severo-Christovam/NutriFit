@@ -13,7 +13,8 @@ app.secret_key = "seila"
 @app.route("/")
 @app.route("/paginainicial")
 def pagina_inicial():
-    return render_template("pagina-inicial.html")
+    produtos = Produtos.recuperar_produtos()
+    return render_template("pagina-inicial.html", produtos = produtos)
 
 
 @app.route("/paginaprodutos")
