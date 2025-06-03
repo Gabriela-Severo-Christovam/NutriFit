@@ -32,8 +32,13 @@
             </div>
             <nav class="header__nav d-flex gap-3 align-items-center">
                 <!-- colocar o nome conforme quem for o usuário aqui -->
-                <span class="header__user">Olá, ........</span>
+                 {% if session.usuario %}
+                <span class="header__user">Olá, {{session.nome_usuario}} </span>
                 <!-- link para carrinho de compraa do usuário -->
+                 {% else %}
+               
+                {% endif %}
+                
                 <a href="/paginacarrinho" class="header__link">Meu carrinho <i class="bi bi-cart4"></i></a>
                 <!-- retornar a página principal -->
                 <a href="/paginainicial" class="header__link">Voltar a página inicial <i class="bi bi-house-fill"></i></a>

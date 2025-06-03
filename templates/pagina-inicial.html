@@ -31,8 +31,13 @@
       <div class="header__logo"><img alt="Logo da Empresa" class="header__logo-image"></div>
       <!-- navegação (botões ul para outras páginas) -->
       <nav class="header__nav">
+        {% if session.usuario %}
+        <a href="" class="header__link">Bem vindo {{session.nome_usuario}} <i class="bi bi-arrow-right"></i></a>
+        <a href="/deslogar" class="header__link">Sair <i class="bi bi-person-lines-fill"></i></a>
+        {% else %}
         <a href="/paginacadastro" class="header__link">Cadastrar <i class="bi bi-arrow-right"></i></a>
         <a href="/paginalogin" class="header__link">Entrar <i class="bi bi-person-lines-fill"></i></a>
+        {% endif %}
       </nav>
     </div>
   </header>

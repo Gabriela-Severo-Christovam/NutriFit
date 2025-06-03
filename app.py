@@ -74,10 +74,14 @@ def post_logar():
     esta_logado = Usuario.logar(email, senha)
 
     if esta_logado:
-        return redirect('/paginaprodutos')
+        return redirect("/paginainicial")
     else:
         return redirect("/paginalogin")
     
+@app.route("/deslogar")
+def deslogar():
+    session.clear()
+    return redirect("/")  
 
 @app.route("/post/cadastrarcomentario", methods = ["POST"])
 def post_comentario():
