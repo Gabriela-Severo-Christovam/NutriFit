@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+   font-family: 'Roboto', sans-serif;
   background-color: var(--cor-white);
   color: var(--cor-black);
 }
@@ -40,7 +40,7 @@ header {
   color: var(--cor-accent);
 }
 
-/* Centraliza e organiza carrossel + infos lado a lado */
+
 .product {
   display: flex;
   justify-content: space-between;
@@ -48,13 +48,11 @@ header {
   gap: 2rem;
 }
 
-/* Carrossel de fotos */
 .product__image {
   flex: 1 1 45%;
   max-width: 48%;
 }
 
-/* Informações do produto (título, descrição, botão) */
 .product__details {
   flex: 1 1 45%;
   max-width: 48%;
@@ -63,33 +61,27 @@ header {
   justify-content: center;
 }
 
-/* Comentários + campo de adicionar comentário lado a lado */
-.reviews,
-.comment {
+.reviews,.comment {
   flex: 1 1 45%;
   max-width: 48%;
 }
 
-/* Container dos dois blocos juntos */
-.reviews.container,
-.comment.container {
+.reviews.container,.comment.container {
   display: inline-block;
   vertical-align: top;
 }
 
-/* Agrupa a seção de avaliações e comentários lado a lado */
 .reviews.container {
   margin-right: 2%;
 }
 
-/* Comentário ocupa a lateral direita */
 .comment.container {
   float: right;
 }
 
 .comment__btn {
-  background-color: var(--cor-accent); /* cor principal do seu tema */
-  color: var(--cor-white);             /* cor do texto */
+  background-color: var(--cor-accent); 
+  color: var(--cor-white);            
   border: none;
   padding: 0.6rem 1.2rem;
   font-weight: 500;
@@ -98,7 +90,7 @@ header {
 }
 
 .comment__btn:hover {
-  background-color: #0b5ed7; /* tom mais escuro no hover (ajuste como quiser) */
+  background-color: var(--cor-accent); 
   color: var(--cor-white);
 }
 
@@ -122,3 +114,4 @@ footer {
 .footer__link:hover {
   color: var(--cor-accent);
 }
+

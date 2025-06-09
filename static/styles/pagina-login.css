@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: var(--cor-white);
   color: var(--cor-black);
 }
@@ -40,18 +40,16 @@ header {
   color: var(--cor-accent);
 }
 
-/* Formulário */
-
 .login {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 70vh; /* Centraliza verticalmente em telas maiores */
+  min-height: 70vh;
   padding: 2rem 1rem;
 }
 
 .login__form {
-  background-color:  var(--cor-accent);
+  background-color: var(--cor-accent);
   padding: 2rem;
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -66,20 +64,28 @@ header {
 }
 
 .login__register-btn {
-  background-color: var(--cor-primaria);
+  background-color: var(--cor-secundaria);
   color: var(--cor-white);
 }
 
 .login__btn {
-  background-color: var(--cor-primaria);
+  background-color: var(--cor-secundaria);
+  color: var(--cor-white);
+}
+
+.login__btn:hover {
+  background-color: var(--cor-header);
+  color: var(--cor-white);
+}
+
+.login__register-btn:hover {
+  background-color: var(--cor-header);
   color: var(--cor-white);
 }
 
 .login__form .form-label {
   font-weight: 600;
 }
-
-
 
 /* //////////////////////////////////////////////////////// footer  /////////////////////////////////////////////////////////////////////////*/
 footer {

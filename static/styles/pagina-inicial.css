@@ -1,6 +1,21 @@
+html, body {
+  height: 100%;
+}
+
+/*  vertical p colar o footer no pé */
+.body__wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: var(--cor-white);
   color: var(--cor-black);
 }
