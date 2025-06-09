@@ -1,11 +1,11 @@
-/* cores */
+/* cores do projeto*/
 :root {
   --cor-primaria: #7B2CBF;     /*  principal */
   --cor-secundaria: #9D4EDD;   /*  detalhes */
   --cor-accent: #C77DFF;      /*  claro (forms) */
   --cor-header: #5A188A;      /*  escuro (header) */
 
-/* padrão */
+/* cores padrão */
   --cor-white: #ffffff;
   --cor-black: #000000;
 

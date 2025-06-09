@@ -5,13 +5,6 @@
   box-sizing: border-box;
 }
 
-/* config padrão de todas as páginas */
-html, body {
-  height: 100%;
-  font-family: 'Roboto', sans-serif;
-  scroll-behavior: smooth;
-}
-
 /* padrão a's */
 a {
   text-decoration: none;
