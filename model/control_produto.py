@@ -10,21 +10,21 @@ class Produtos:
 
         # Criando o sql que será executado
         sql = """
-                SELECT
-                    tbProdutos.nome AS nome_produto,
-                    tbProdutos.descricao AS descricao_produto,
-                    tbProdutos.preco,
-                    tbCategoria.descricao AS categoria_produto,
-                    tbFotosProdutos.url AS url_foto
-                FROM
-                    tbProdutos
-                INNER JOIN
-                    tbCategoria
-                    ON tbProdutos.cod_categorias = tbCategoria.cod_categorias
-                INNER JOIN
-                    tbFotosProdutos
-                    ON tbProdutos.cod_produto = tbFotosProdutos.cod_produto;"""
-
+            SELECT
+                tbProdutos.nome AS nome_produto,
+                tbProdutos.descricao AS descricao_produto,
+                tbProdutos.preco,
+                tbProdutos.cod_produto,
+                tbCategoria.descricao AS categoria_produto,
+                tbFotosProdutos.url AS url_foto
+            FROM 
+                tbProdutos
+            INNER JOIN tbCategoria
+                ON tbProdutos.cod_categorias = tbCategoria.cod_categorias
+            INNER JOIN tbFotosProdutos
+                ON tbProdutos.cod_produto = tbFotosProdutos.cod_produto;
+            """
+        
         #Executando o comando sql
         cursor.execute(sql)        
 

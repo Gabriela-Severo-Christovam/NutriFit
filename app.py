@@ -97,4 +97,6 @@ def post_comentario():
     # Redireciona para o index
     return redirect("/paginaprodutoespecifico")
 
+
+
 app.run()
