@@ -18,12 +18,17 @@ class Conexao:
         #                                 password = "root",
         #                                 database = "dbNutriFit")
         
-        conexao = mysql.connector.connect(host = "bdnutrifit-nutrifit.c.aivencloud.com",
-                                        port = 19284,
+        # conexao = mysql.connector.connect(host = "bdnutrifit-nutrifit.c.aivencloud.com",
+        #                                 port = 19284,
+        #                                 user = "avnadmin",
+        #                                 password = "AVNS_JYqgtjLoovtRs3_GrDj",
+        #                                 database = "defaultdb")
+
+
+        conexao = mysql.connector.connect(host = "msqlnutrifit-bdnutrifit.i.aivencloud.com",
+                                        port = 25804,
                                         user = "avnadmin",
-                                        password = "AVNS_JYqgtjLoovtRs3_GrDj",
-                                        database = "defaultdb")
-        
-        
-        
+                                        password = "AVNS_EdjccFzU2a1ug7FkmRI",
+                                        database = "dbNutriFit")
+
         return conexao
