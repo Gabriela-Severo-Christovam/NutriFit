@@ -38,6 +38,7 @@ class Carrinho:
                 tbProdutos.nome AS nome_produto,
                 tbProdutos.descricao AS descricao_produto,
                 tbProdutos.preco,
+                tbProdutos.cod_produto,
                 tbCarrinho.cod_carrinho AS cod_carrinho,
                 tbFotosProdutos.url AS url_foto
             FROM
@@ -46,6 +47,7 @@ class Carrinho:
                 tbProdutos ON tbCarrinho.cod_produto = tbProdutos.cod_produto
             INNER JOIN
                 tbFotosProdutos ON tbProdutos.cod_produto = tbFotosProdutos.cod_produto;
+            GROUP BY tbProdutos.cod_produto;
             """
                    
         # Executando o comnado sql
@@ -60,7 +62,7 @@ class Carrinho:
         return resultado
    
  
-    def deletar_carrinho(cod_requisito):
+    def deletar_carrinho(cod_carrinho):
           # Criando a conexão com o banco de dados
         conexao = Conexao.criar_conexao()
 
@@ -68,9 +70,9 @@ class Carrinho:
         cursor = conexao.cursor()
 
         # Criando o sql que será executado
-        sql = """DELETE from tb_requisitos WHERE cod_requisito= %s; """
+        sql = """DELETE from tbCarrinho WHERE cod_carrinho = %s;"""
                    
-        valores = (cod_requisito,)
+        valores = (cod_carrinho,)
        
         # Executando o comnado sql
         cursor.execute(sql,valores)
