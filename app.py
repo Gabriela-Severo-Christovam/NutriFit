@@ -25,9 +25,9 @@ def pagina_recuperar():
     produtos = Produtos.recuperar_produtos()
     return render_template("pagina-produtos.html", produtos = produtos)
 
-@app.route("/categoria")
-def pagina_categoria():
-    categorias = Produtos.categorias()
+@app.route("/post/categoria/<descricao>", methods= ["POST"])
+def pagina_categoria(descricao):
+    categorias = Produtos.categorias(descricao)
     return redirect("/produtos", categorias = categorias)
 
 

@@ -39,6 +39,7 @@
             <div class="header__logo">
                 <img src="/static/img/Nutrifit logo.png" alt="Logo da Empresa" class="header__logo-image">
             </div>
+
             <nav class="header__nav d-flex gap-3 align-items-center">
                 <!-- colocar o nome conforme quem for o usuário aqui -->
                  {% if session.usuario %}
@@ -56,6 +57,18 @@
     </header>
 
     <main>
+        <!-- Categorias -->
+        {% for categoria in caterias %}
+        <section class="category">
+          <H2>Selecione a categoria:</H2>
+          <a href="/post/categoria/{{categoria.descricao}}">
+            <button>WHEY</button>
+            <button>CREATINA</button>
+            <button>ACESSORIOS</button>
+          </a>
+        </section>
+        {% endfor %}
+
         <!-- seção onde irão os produtos -->
         <!-- inserir as imagens aqui posteriormente -->
          
@@ -74,12 +87,6 @@
           </section>
         {% endfor %}
 
-        <div>
-          <H2>Selecione a categoria:</H2>
-          <button>WHEY</button>
-          <button>CREATINA</button>
-          <button>ACESSORIOS</button>
-        </div>
     </main>
 
   <footer>
