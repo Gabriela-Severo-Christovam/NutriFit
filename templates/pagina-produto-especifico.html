@@ -107,18 +107,17 @@
                 </button> -->
             </div>
 
-            <!-- CORRIGIR: add jinja -->
+        {% for carrinho in carrinhos %}
             <!-- informações do produto -->
             <div class="product__details">
-                <h1 class="product__name">Nome do Produto</h1>
+                <h1 class="product__name">{{carrinho.nome}}</h1>
                 <!-- descrição do produto e classificação dele (filtro) -->
-                <p class="product__type">nutrition<br>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae ipsa asperiores repudiandae amet
-                    dolor, illo, laboriosam doloremque ratione possimus, eos reiciendis veniam deserunt sed laudantium
-                    quod laborum excepturi quibusdam quaerat.</p>
-                <p class="product__price h3 fw-bold">R$139,90</p>
-                <button class="btn btn-success product__buy">Adicionar ao carrinho</button>
+                <p class="product__type">Informações<br>{{carrinho.descricao}}</p>
+                <p class="product__price h3 fw-bold">R$ {{carrinho.preco}}</p>
+                <a href="/addcarrinho/{{carrinho.cod_produto}}"><button class="btn btn-success product__buy">Adicionar ao carrinho</button></a>
             </div>
+        {% endfor %}
+        
         </section>
 
         <!-- comentários -->

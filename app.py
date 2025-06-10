@@ -29,7 +29,7 @@ def pagina_recuperar():
 @app.route("/paginaprodutoespecifico/<cod_produto>")
 def pagina_produtos_especifico(cod_produto):
     produtos = Produtos.recuperar_produto_especifico(cod_produto)
-    return render_template("pagina-produtos-especifico.html", produtos = produtos)
+    return render_template("pagina-produto-especifico.html", produtos = produtos)
 
 
 # ROTA QUE SÓ ENTRA NO CARRINHO SE ESTIVER LOGADO
@@ -37,10 +37,27 @@ def pagina_produtos_especifico(cod_produto):
 def pagina_carrinho():
     if "usuario" in session: 
         carrinho = Carrinho.recuperar_carrinho()
-
         return render_template("pagina-compras.html", carrinho = carrinho )
     else:
         return redirect("/paginalogin")
+    
+
+@app.route("/addcarrinho/<cod_produto>")
+def addcarrinho(cod_produto):
+    produtos_carrinho = Carrinho.adicionar_carrinho(cod_produto)
+    return render_template("pagina-produto-especifico.html", produtos_carrinho = produtos_carrinho)
+
+# @app.route("/carrinho")
+# def carrinho():
+#     recuperar_carrinho = Carrinho.recuperar_carrinho()
+#     return render_template("pagina-compras.html", recuperar_carrinho = recuperar_carrinho)
+
+
+@app.route("/limparcarrinho")
+def limpar_carrinho(cod_carrinho):
+    deletar = Carrinho.deletar_carrinho(cod_carrinho)
+    return render_template("pagina-compras.html", deletar = deletar)
+
     
 @app.route("/paginalogin")
 def paginalogin():
@@ -49,7 +66,6 @@ def paginalogin():
 @app.route("/paginacadastro")
 def paginacadastro():
     return render_template("pagina-cadastro.html")   
-
 
 
 @app.route("/post/cadastrarusuario", methods= ["POST"])
@@ -83,7 +99,8 @@ def post_logar():
 @app.route("/deslogar")
 def deslogar():
     session.clear()
-    return redirect("/")  
+    return redirect("/") 
+
 
 @app.route("/post/cadastrarcomentario", methods = ["POST"])
 def post_comentario():
@@ -95,7 +112,7 @@ def post_comentario():
     Mensagem.cadastrar_mensagem(usuario, comentario)
     
     # Redireciona para o index
-    return redirect("/paginaprodutoespecifico")
+    return redirect("/pagina-produto-especifico.html")
 
 #TERMINAR
 @app.route("/comentario")

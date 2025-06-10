@@ -60,7 +60,7 @@ class Carrinho:
         return resultado
    
  
-    def deletar_carrinho(cod_requisito):
+    def deletar_carrinho(cod_carrinho):
           # Criando a conexão com o banco de dados
         conexao = Conexao.criar_conexao()
 
@@ -68,9 +68,9 @@ class Carrinho:
         cursor = conexao.cursor()
 
         # Criando o sql que será executado
-        sql = """DELETE from tb_requisitos WHERE cod_requisito= %s; """
+        sql = """DELETE from tbCarrinho WHERE cod_carrinho = %s;"""
                    
-        valores = (cod_requisito,)
+        valores = (cod_carrinho,)
        
         # Executando o comnado sql
         cursor.execute(sql,valores)
