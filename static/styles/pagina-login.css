@@ -1,10 +1,24 @@
+html, body {
+  height: 100%;
+}
+
+/*  vertical p colar o footer no pé */
+.body__wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
   background-color: var(--cor-white);
   color: var(--cor-black);
 }
-
 /* //////////////////////////////////////////////////////// header  /////////////////////////////////////////////////////////////////////////*/
 header {
   background-color: var(--cor-header);
@@ -21,7 +35,7 @@ header {
 }
 
 .header__logo-image {
-  height: 60px;
+  height: 120px;
 }
 
 .header__nav {

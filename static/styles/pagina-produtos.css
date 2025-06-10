@@ -63,13 +63,11 @@ header {
   background-color: var(--cor-accent);
   border-radius: var(--border-radius);
   padding: 1rem;
-  width: 140px;
-  text-align: center;
+  width: calc(33% - 1rem); 
   transition: transform var(--transition-padrao);
 }
 
 .products__item:hover {
-    /* tamanho */
   transform: scale(1.05);
 }
 

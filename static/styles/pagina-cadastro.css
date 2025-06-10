@@ -1,7 +1,19 @@
-body {
+html, body {
+  height: 100%;
+  margin: 0;
   font-family: 'Roboto', sans-serif;
   background-color: var(--cor-white);
   color: var(--cor-black);
+}
+
+.body__wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
 }
 
 /* //////////////////////////////////////////////////////// header  /////////////////////////////////////////////////////////////////////////*/
@@ -10,17 +22,8 @@ header {
   padding: 1rem 0;
 }
 
-.header__container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: auto;
-  padding: 0 2rem;
-}
-
 .header__logo-image {
-  height: 70px;
+  height: 80px;
 }
 
 .header__nav {
