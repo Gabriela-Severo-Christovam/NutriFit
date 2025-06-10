@@ -1,0 +1,107 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--cor-white);
+  color: var(--cor-black);
+}
+
+.body__wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* //////////////////////////////////////////////////////// header  /////////////////////////////////////////////////////////////////////////*/
+header {
+  background-color: var(--cor-header);
+  color: var(--cor-white);
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__logo-image {
+  max-height: 40px;
+}
+
+.header__nav {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.header__link {
+  color: var(--cor-white);
+  text-decoration: none;
+  transition: var(--transition-padrao);
+}
+
+.header__link:hover {
+  text-decoration: underline;
+}
+
+/* //////////////////////////////////////////////////////// produtos  /////////////////////////////////////////////////////////////////////////*/
+.products__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  background-color: var(--cor-white);
+  border-radius: var(--border-radius);
+  padding: 2rem 1rem;
+}
+
+.products__item {
+  background-color: var(--cor-accent);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  width: 140px;
+  text-align: center;
+  transition: transform var(--transition-padrao);
+}
+
+.products__item:hover {
+    /* tamanho */
+  transform: scale(1.05);
+}
+
+.products__image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+}
+
+.products__name {
+  margin-top: 0.5rem;
+  font-weight: bold;
+  color: var(--cor-black);
+}
+
+/* //////////////////////////////////////////////////////// footer  /////////////////////////////////////////////////////////////////////////*/
+footer {
+  background-color: var(--cor-header);
+  color: var(--cor-white);
+  text-align: center;
+  padding: 1.5rem 1rem;
+
+}
+
+.footer__link {
+  color: var(--cor-white);
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 2500;
+  transition: color var(--transition-padrao);
+}
+
+.footer__link:hover {
+  color: var(--cor-accent);
+}

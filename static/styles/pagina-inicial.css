@@ -1,0 +1,184 @@
+html, body {
+  height: 100%;
+}
+
+/*  vertical p colar o footer no pé */
+.body__wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--cor-white);
+  color: var(--cor-black);
+}
+
+/* //////////////////////////////////////////////////////// header  /////////////////////////////////////////////////////////////////////////*/
+header {
+  background-color: var(--cor-header);
+  padding: 1rem 0;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 2rem;
+}
+
+.header__logo-image {
+  height: 60px;
+}
+
+.header__nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.header__link {
+  color: var(--cor-white);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-padrao);
+}
+
+.header__link:hover {
+  color: var(--cor-accent);
+}
+
+/* //////////////////////////////////////////////////////// carrosssel  /////////////////////////////////////////////////////////////////////////*/
+
+.banner__carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.banner__image {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.banner__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  padding: 0.75rem;
+  border-radius: 30%;
+  cursor: pointer;
+  color: var(--cor-white);
+  font-size: 1.2rem;
+}
+
+.banner__arrow--left {
+  left: 1rem;
+}
+
+.banner__arrow--right {
+  right: 1rem;
+}
+
+/* //////////////////////////////////////////////////////// benefícios da loja  /////////////////////////////////////////////////////////////////////////*/
+.benefits {
+  display: flex;
+  justify-content: space-around;
+  background-color: var(--cor-white);
+  padding: 2rem;
+  text-align: center;
+}
+
+.benefits__item {
+  flex: 1;
+  margin: 0 1rem;
+}
+
+.benefits__icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--cor-header);
+}
+
+.benefits__title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.benefits__desc {
+  font-size: 1rem;
+}
+
+/* //////////////////////////////////////////////////////// produtos  /////////////////////////////////////////////////////////////////////////*/
+.products__item {
+  border: 1px solid var(--cor-primaria);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  text-align: center;
+  transition: box-shadow var(--transition-padrao);
+  background-color: var(--cor-white);
+}
+
+.products__item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.products__image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.products__name {
+  margin: 1rem 0 0.5rem;
+  font-weight: bold;
+}
+
+.products__button-wrapper {
+  margin-top: 1rem;
+}
+
+.products__button {
+  background-color: var(--cor-secundaria);
+  color: var(--cor-white);
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color var(--transition-padrao);
+}
+
+.products__button:hover {
+  background-color: var(--cor-primaria);
+}
+
+/* //////////////////////////////////////////////////////// footer  /////////////////////////////////////////////////////////////////////////*/
+footer {
+  background-color: var(--cor-header);
+  color: var(--cor-white);
+  text-align: center;
+  padding: 1.5rem 1rem;
+}
+
+.footer__link {
+  color: var(--cor-white);
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 2500;
+  transition: color var(--transition-padrao);
+}
+
+.footer__link:hover {
+  color: var(--cor-accent);
+}

@@ -1,0 +1,17 @@
+/* reset geral */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* padrão a's */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* links */
+ul, ol {
+  list-style: none;
+}
