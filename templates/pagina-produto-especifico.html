@@ -90,26 +90,33 @@
         <!-- seção principal do produto -->
         <section class="product container py-5 d-flex flex-wrap gap-5 justify-content-center">
             <!-- carrossel -->
+            
             <div id="carouselFotos" class="carousel slide product__image" data-bs-ride="carousel">
                 <div class="carousel-inner rounded">
                     <div class="carousel-item active">
-                        <img src="img1.jpg" class="d-block w-100" alt="Imagem 1">
+                        <img src="https://www.kejietechnology.com/upload/image/20241016/1729077644217924.jpg" class="d-block w-100" alt="Imagem 1">
                     </div>
+                    <div class="carousel-item active">
+                        <img src="https://www.kejietechnology.com/upload/image/20241016/1729077644217924.jpg" class="d-block w-100" alt="Imagem 1">
+                    </div>
+                    {% for produto in produtos %}
                     <div class="carousel-item">
-                        <img src="img2.jpg" class="d-block w-100" alt="Imagem 2">
+                        <img src="{{produto.url_foto}}" class="d-block w-100" alt="Imagem 2">
                     </div>
-                </div>
-                <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselFotos"
+                    {% endfor %}
+
+                </div> 
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselFotos"
                     data-bs-slide="prev">
                     <span class="carousel-control-prev-icon"></span>
                 </button>
                 <button class="carousel-control-next" type="button" data-bs-target="#carouselFotos"
                     data-bs-slide="next">
                     <span class="carousel-control-next-icon"></span>
-                </button> -->
+                </button>
             </div>
-
-        {% for produto in produtos %}
+            
+            <!-- CORRIGIR: add jinja -->
             <!-- informações do produto -->
             <div class="product__details">
                 <form action="/post/addcarrinho/{{produto.cod_produto}}" method="POST">
@@ -125,32 +132,29 @@
         </section>
 
         <!-- comentários -->
-        <section class="reviews container my-5">
-            <div class="reviews__title h4 mb-4">Avaliações mais recentes</div>
-            <div class="review mb-3">
-                <!-- nome do usuário -->
-                <div><strong class="review__name">RAYSSA</strong><strong> Comentou: </strong>Lorem ipsum dolor sit, amet
-                    consectetur adipisicing elit. Doloribus at ipsa libero porro !</div>
-                <p class="review__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus at ipsa
-                    libero porro </p>
-            </div>
-            <div class="review mb-3">
-                <!-- nome do usuário -->
-                <div><strong class="review__name">ANA</strong><strong> Comentou: </strong>Lorem ipsum dolor sit, amet
-                    consectetur adipisicing elit. Doloribus at ipsa libero porro </div>
-                <p class="review__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus at ipsa
-                    libero porro </p>
-            </div>
-        </section>
+        {% for mensagem in mensagens %}
+            <section class="reviews container my-5">
+                <div class="reviews__title h4 mb-4">Avaliações mais recentes</div>
+                <div class="review mb-3">
+                    <!-- nome do usuário -->
+                <div><strong class="review__name">{{mensagem.usuario}}</strong><strong> Comentou: </strong></div>
+                    <p class="review__text">{{mensagem.comentario}} </p>
+                    <p>{{mensagem.data_hora}}</p>
+                </div>
+            </section>
+        {% endfor %}
 
         <!-- adicionar comentário -->
+       
         <section class="comment container mb-5">
-            <h5 class="comment__title">Adicionar um comentário</h5>
-            <div class="mb-3">
-                <textarea class="form-control comment__input" id="inputComentario" rows="3"
-                    placeholder="Deixe seu comentário..."></textarea>
-            </div>
-            <button class="btn comment__btn">enviar</button>
+            <form action="/post/cadastrarcomentario" method="POST">
+                <h5 class="comment__title">Adicionar um comentário</h5>
+                <div class="mb-3">
+                    <textarea name="comentario" class="form-control comment__input" id="inputComentario" rows="3"
+                        placeholder="Deixe seu comentário..."></textarea>
+                </div>
+                <button class="btn comment__btn">enviar</button>
+            </form>
         </section>
     </main>
 

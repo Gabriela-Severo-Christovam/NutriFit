@@ -63,7 +63,7 @@ class Produtos:
                 tbProdutos.cod_produto = %s;
             """
 
-        valores = (cod_produto,)
+        valores = (cod_produto, )
         #Executando o comando sql
         cursor.execute(sql, valores)        
 
