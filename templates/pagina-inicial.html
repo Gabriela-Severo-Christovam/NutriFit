@@ -43,7 +43,7 @@
       <!-- navegação (botões ul para outras páginas) -->
       <nav class="header__nav">
         {% if session.usuario %}
-        <a href="" class="header__link">Bem vindo {{session.nome_usuario}} <i class="bi bi-arrow-right"></i></a>
+        <a href="" class="header__link">Bem vindo(a)   {{session.nome_usuario}} <i class="bi bi-arrow-right"></i></a>
         <a href="/deslogar" class="header__link">Sair <i class="bi bi-person-lines-fill"></i></a>
         {% else %}
         <a href="/paginacadastro" class="header__link">Cadastrar <i class="bi bi-arrow-right"></i></a>

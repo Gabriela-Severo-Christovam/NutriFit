@@ -50,6 +50,7 @@ class Produtos:
                 tbProdutos.nome AS nome_produto,
                 tbProdutos.descricao AS descricao_produto,
                 tbProdutos.preco,
+                tbProdutos.cod_produto,
                 tbCategoria.descricao AS categoria_produto,
                 tbFotosProdutos.url AS url_foto
             FROM 
@@ -62,7 +63,7 @@ class Produtos:
                 tbProdutos.cod_produto = %s;
             """
 
-        valores = (cod_produto,)
+        valores = (cod_produto, )
         #Executando o comando sql
         cursor.execute(sql, valores)        
 

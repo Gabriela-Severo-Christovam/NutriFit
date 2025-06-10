@@ -29,7 +29,8 @@ def pagina_recuperar():
 @app.route("/paginaprodutoespecifico/<cod_produto>")
 def pagina_produtos_especifico(cod_produto):
     produtos = Produtos.recuperar_produto_especifico(cod_produto)
-    return render_template("pagina-produto-especifico.html", produtos = produtos)
+    mensagens = Mensagem.recuperar_mensagems()
+    return render_template("pagina-produto-especifico.html", produtos = produtos,  mensagens = mensagens)
 
 
 # ROTA QUE SÓ ENTRA NO CARRINHO SE ESTIVER LOGADO
@@ -37,10 +38,27 @@ def pagina_produtos_especifico(cod_produto):
 def pagina_carrinho():
     if "usuario" in session: 
         carrinho = Carrinho.recuperar_carrinho()
-
         return render_template("pagina-compras.html", carrinho = carrinho )
     else:
         return redirect("/paginalogin")
+    
+
+@app.route("/post/addcarrinho/<cod_produto>", methods= ["POST"])
+def addcarrinho(cod_produto):
+    produtos_carrinho = Carrinho.adicionar_carrinho(cod_produto)
+    return render_template("pagina-produto-especifico.html", produtos_carrinho = produtos_carrinho)
+
+# @app.route("/carrinho")
+# def carrinho():
+#     recuperar_carrinho = Carrinho.recuperar_carrinho()
+#     return render_template("pagina-compras.html", recuperar_carrinho = recuperar_carrinho)
+
+
+@app.route("/limparcarrinho/<cod_carrinho>")
+def limpar_carrinho(cod_carrinho):
+    deletar = Carrinho.deletar_carrinho(cod_carrinho)
+    return render_template("pagina-compras.html", deletar = deletar)
+
     
 @app.route("/paginalogin")
 def paginalogin():
@@ -49,7 +67,6 @@ def paginalogin():
 @app.route("/paginacadastro")
 def paginacadastro():
     return render_template("pagina-cadastro.html")   
-
 
 
 @app.route("/post/cadastrarusuario", methods= ["POST"])
@@ -83,7 +100,8 @@ def post_logar():
 @app.route("/deslogar")
 def deslogar():
     session.clear()
-    return redirect("/")  
+    return redirect("/") 
+
 
 @app.route("/post/cadastrarcomentario", methods = ["POST"])
 def post_comentario():
@@ -95,9 +113,9 @@ def post_comentario():
     Mensagem.cadastrar_mensagem(usuario, comentario)
     
     # Redireciona para o index
-    return redirect("/paginaprodutoespecifico")
+    return redirect("/paginaprodutoespecifico/<cod_produto>")
 
-#TERMINAR
+
 @app.route("/comentario")
 def pagina_principal():
     if "usuario" in session:
@@ -105,8 +123,25 @@ def pagina_principal():
         mensagens = Mensagem.recuperar_mensagems()
 
         #enviar as mensagens para o template
-        return render_template("paginaInicial.html", mensagens = mensagens)
+        return render_template("pagina-produto-especifico.html", mensagens = mensagens)
     else:
-        return redirect("/paginalogin")
+        return redirect("/paginaprodutoespecifico/<cod_produto>")
+    
+# CORRIGIR...
+# @app.route("/delete/mensagem/<codigo>")
+# def delete_mensagem(codigo):
+#     Mensagem.deletar_mensagem(codigo)
+#     return redirect("/comentario")
 
-app.run()
+# @app.route("/put/mensagem/adicionar/curtida/<codigo>")
+# def adicionar_curtida(codigo):
+#     Mensagem.adicionar_curtida(codigo)
+#     return redirect("/comentario")
+
+# @app.route("/put/mensagem/deletar/curtida/<codigo>")
+# def deletar_curtida(codigo):
+#     Mensagem.deletar_curtida(codigo)
+#     return redirect("/comentario")
+
+
+app.run(debug=True)

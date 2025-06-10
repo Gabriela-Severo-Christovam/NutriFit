@@ -44,8 +44,10 @@
       <nav class="header__nav d-flex gap-3 align-items-center">
         <!-- colocar o nome conforme quem for o usuário aqui -->
         <!-- ele só poderá acessar o carrinhoo se fizer login -->
-        <span class="header__user">Olá, Uninho!</span>
-        <a href="/paginainicial" class="header__link">Voltar à página inicial<i class="bi bi-house-fill"></i></a>
+        {% if session.usuario %}
+        <span class="header__user">Olá,  {{session.nome_usuario}}!</span>
+        {% endif %}
+        <a href="/paginainicial" class="header__link">Voltar a página inicial<i class="bi bi-house-fill"></i></a>
       </nav>
     </div>
   </header>
@@ -90,28 +92,26 @@
   <main class="cart">
     <h2 class="cart__title">ITENS NO CARRINHO</h2>
 
+    {% for carrinho in carrinho %}
     <!-- produto -->
     <div class="cart__item">
-      <div class="cart__image"><img src="" alt="Foto do produto" class="cart__img"></div>
+      <div class="cart__image"><img src="{{carrinho.url_foto}}" alt="Foto do produto" class="cart__img"></div>
       <div class="cart__details">
-        <div class="cart__name">Nome do produto</div>
+        <div class="cart__name">{{carrinho.nome}}</div>
         <div class="cart__desc">
           <p>classificação</p>
-          <p>descrição Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, veritatis, laborum provident
-            iure obcaecati voluptatibus cum libero voluptas mollitia pariatur hic numquam, animi optio. Amet nulla culpa
-            asperiores aperiam voluptatibus?</p>
-          <p>32%</p>
+          <p>{{carrinho.descricao}}</p>
         </div>
       </div>
-      <div class="cart__price">R$124,90*</div>
+      <div class="cart__price">{{carrinho.preco}}</div>
       <!--  exclusão -->
-      <button class="btn btn-outline-dark cart__remove-btn" title="Remover item">
+        <a href="/limparcarrinho/{{carrinho.cod_carrinho}}"><button class="btn btn-outline-dark cart__remove-btn" title="Remover item">
         <i class="bi bi-x fs-4"></i>
-      </button>
-
+      </button></a>
     </div>
-   
-    <!-- botão p finalizar a compra -->
+   {% endfor %}
+
+    <!-- Botão Finalizar -->
     <div class="cart__footer">
       <button class="btn btn-success cart__btn">Finalizar Compra</button>
     </div>
