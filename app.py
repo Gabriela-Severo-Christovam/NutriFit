@@ -25,9 +25,11 @@ def pagina_recuperar():
     produtos = Produtos.recuperar_produtos()
     return render_template("pagina-produtos.html", produtos = produtos)
 
-@app.route("/paginaprodutoespecifico")
-def pagina_produtos_especifico():
-    return render_template("pagina-produtos-especifico.html")
+
+@app.route("/paginaprodutoespecifico/<cod_produto>")
+def pagina_produtos_especifico(cod_produto):
+    produtos = Produtos.recuperar_produto_especifico(cod_produto)
+    return render_template("pagina-produtos-especifico.html", produtos = produtos)
 
 
 # ROTA QUE SÓ ENTRA NO CARRINHO SE ESTIVER LOGADO
@@ -94,5 +96,17 @@ def post_comentario():
     
     # Redireciona para o index
     return redirect("/paginaprodutoespecifico")
+
+#TERMINAR
+@app.route("/comentario")
+def pagina_principal():
+    if "usuario" in session:
+        #Recuperar as mensagens 
+        mensagens = Mensagem.recuperar_mensagems()
+
+        #enviar as mensagens para o template
+        return render_template("paginaInicial.html", mensagens = mensagens)
+    else:
+        return redirect("/paginalogin")
 
 app.run()
