@@ -102,11 +102,9 @@
       </div>
       <div class="cart__price">{{carrinho.preco}}</div>
       <!--  exclusão -->
-        <a href="/limparcarrinho"><button class="btn btn-outline-dark cart__remove-btn" title="Remover item">
+        <a href="/limparcarrinho/{{carrinho.cod_carrinho}}"><button class="btn btn-outline-dark cart__remove-btn" title="Remover item">
         <i class="bi bi-x fs-4"></i>
       </button></a>
-      
-
     </div>
    {% endfor %}
 

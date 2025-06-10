@@ -53,7 +53,7 @@ def addcarrinho(cod_produto):
 #     return render_template("pagina-compras.html", recuperar_carrinho = recuperar_carrinho)
 
 
-@app.route("/limparcarrinho")
+@app.route("/limparcarrinho/<cod_carrinho>")
 def limpar_carrinho(cod_carrinho):
     deletar = Carrinho.deletar_carrinho(cod_carrinho)
     return render_template("pagina-compras.html", deletar = deletar)
