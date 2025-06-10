@@ -122,23 +122,17 @@
         </section>
 
         <!-- comentários -->
-        <section class="reviews container my-5">
-            <div class="reviews__title h4 mb-4">Avaliações mais recentes</div>
-            <div class="review mb-3">
-                <!-- nome do usuário -->
-                <div><strong class="review__name">RAYSSA</strong><strong> Comentou: </strong>Lorem ipsum dolor sit, amet
-                    consectetur adipisicing elit. Doloribus at ipsa libero porro !</div>
-                <p class="review__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus at ipsa
-                    libero porro </p>
-            </div>
-            <div class="review mb-3">
-                <!-- nome do usuário -->
-                <div><strong class="review__name">ANA</strong><strong> Comentou: </strong>Lorem ipsum dolor sit, amet
-                    consectetur adipisicing elit. Doloribus at ipsa libero porro </div>
-                <p class="review__text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus at ipsa
-                    libero porro </p>
-            </div>
-        </section>
+        {% for comentario in comentarios %}
+            <section class="reviews container my-5">
+                <div class="reviews__title h4 mb-4">Avaliações mais recentes</div>
+                <div class="review mb-3">
+                    <!-- nome do usuário -->
+                <div><strong class="review__name">{{comentario.nome}}</strong><strong> Comentou: </strong></div>
+                    <p class="review__text">{{comentario.comentario}} curtidas: {{comentario.curtidas}}</p>
+                    <p>{{comentario.data_hora}}</p>
+                </div>
+            </section>
+        {% endfor %}
 
         <!-- adicionar comentário -->
         <section class="comment container mb-5">
