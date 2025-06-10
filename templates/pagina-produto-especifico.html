@@ -107,14 +107,14 @@
                 </button> -->
             </div>
 
-        {% for carrinho in carrinhos %}
+        {% for produto in produtos %}
             <!-- informações do produto -->
             <div class="product__details">
-                <h1 class="product__name">{{carrinho.nome}}</h1>
+                <h1 class="product__name">{{produto.nome}}</h1>
                 <!-- descrição do produto e classificação dele (filtro) -->
-                <p class="product__type">Informações<br>{{carrinho.descricao}}</p>
-                <p class="product__price h3 fw-bold">R$ {{carrinho.preco}}</p>
-                <a href="/addcarrinho/{{carrinho.cod_produto}}"><button class="btn btn-success product__buy">Adicionar ao carrinho</button></a>
+                <p class="product__type">Informações<br>{{produto.descricao_produto}}</p>
+                <p class="product__price h3 fw-bold">R$ {{produto.preco}}</p>
+                <a href="/post/addcarrinho/{{produto.cod_produto}}"><button class="btn btn-success product__buy">Adicionar ao carrinho</button></a>
             </div>
         {% endfor %}
         

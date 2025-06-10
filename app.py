@@ -42,7 +42,7 @@ def pagina_carrinho():
         return redirect("/paginalogin")
     
 
-@app.route("/addcarrinho/<cod_produto>")
+@app.route("/post/addcarrinho/<cod_produto>", methods= ["POST"])
 def addcarrinho(cod_produto):
     produtos_carrinho = Carrinho.adicionar_carrinho(cod_produto)
     return render_template("pagina-produto-especifico.html", produtos_carrinho = produtos_carrinho)
@@ -126,4 +126,4 @@ def pagina_principal():
     else:
         return redirect("/paginalogin")
 
-app.run()
+app.run(debug=True)
