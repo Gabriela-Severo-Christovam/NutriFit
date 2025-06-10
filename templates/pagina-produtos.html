@@ -62,19 +62,23 @@
         <!-- inserir as imagens aqui posteriormente -->
          
         <!-- TERMINAR -->
-        {% for produto in produtos %}
+       
           <section class="products">
+             
               <div class="products__container container d-flex flex-wrap justify-content-around gap-3 py-4">
+                {% for produto in produtos %} 
                   <article class="products__item">
                       <!-- link para levar para página do produto -->
-                      <a href="/paginaprodutoespecifico/{{produto.cod_produto}}">
+                     <a href="/paginaprodutoespecifico/{{produto.cod_produto}}">
                         <img src="{{produto.url_foto}}" alt="" class="products__image">
                         <h6 class="products__name">{{produto.nome_produto}}</h6>
-                      </a>
-                    </article>  
+                      </a> 
+                    </article> 
+                     {% endfor %}
               </div>
+             
           </section>
-        {% endfor %}
+        
     </main>
 
   <footer>

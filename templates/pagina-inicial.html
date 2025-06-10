@@ -30,6 +30,8 @@
    <link rel="stylesheet" href="/static/styles/variables.css">
 
    <link rel="stylesheet" href="/static/styles/footer.css">
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous" defer></script>
   <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 </head>
 
@@ -59,20 +61,14 @@
       <div id="bannerCarousel" class="banner__carousel carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner banner__carousel-inner">
 
+          {% for produto in produtos %}
           <!--  primeira img a aparecer-->
-          <div class="carousel-item active banner__carousel-item">
-            <img src="" class="d-block w-100 banner__image" alt="nome do produto">
+          <div class="carousel-item {% if loop.first %}active{% endif %} banner__carousel-item">
+            <img src="{{ produto.url_foto }}" class="d-block w-100 banner__image" alt="nome do produto">
           </div>
+          {% endfor %}
 
-          <!-- segunda img a aparecer -->
-          <div class="carousel-item banner__carousel-item">
-            <img src="" class="d-block w-100 banner__image" alt="nome do produto">
-          </div>
-
-          <!-- terceira img a aparecer -->
-          <div class="carousel-item banner__carousel-item">
-            <img src="" class="d-block w-100 banner__image" alt="nome do produto">
-          </div>
+          
 
         </div>
 
@@ -133,10 +129,14 @@
       <div class="products__container container d-flex flex-wrap justify-content-around gap-3 py-4">
         <article class="products__item">
           <!-- link para levar para página do produto -->
-          <a href="">
-            <img src="" alt="" class="products__image">
+          
+  
+            {% for produto_foto in produtos_fotos %}
+            <img src="{{produto_foto.url_foto}}" alt="" class="products__image">
             <h6 class="products__name">Whey Protein</h6>
-          </a>
+            {% endfor %}
+       
+          
         </article>
         <div class="products__button-wrapper text-center mt-3">
           <a href="/paginaprodutos"><button class="products__button">Ver todos os produtos</button></a>
