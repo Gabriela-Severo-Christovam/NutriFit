@@ -89,18 +89,18 @@
   <main class="cart">
     <h2 class="cart__title">ITENS NO CARRINHO</h2>
 
-    {% for item_carrinho in itens_carrinho %}
+    {% for carrinho in carrinho %}
     <!-- produto -->
     <div class="cart__item">
-      <div class="cart__image"><img src="{{item_carrinho.url_foto}}" alt="Foto do produto" class="cart__img"></div>
+      <div class="cart__image"><img src="{{carrinho.url_foto}}" alt="Foto do produto" class="cart__img"></div>
       <div class="cart__details">
-        <div class="cart__name">{{item_carrinho.nome}}</div>
+        <div class="cart__name">{{carrinho.nome}}</div>
         <div class="cart__desc">
           <p>classificação</p>
-          <p>{{item_carrinho.descricao}}</p>
+          <p>{{carrinho.descricao}}</p>
         </div>
       </div>
-      <div class="cart__price">{{item_carrinho.preco}}</div>
+      <div class="cart__price">{{carrinho.preco}}</div>
       <!--  exclusão -->
         <a href="/limparcarrinho"><button class="btn btn-outline-dark cart__remove-btn" title="Remover item">
         <i class="bi bi-x fs-4"></i>
