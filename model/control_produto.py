@@ -74,3 +74,37 @@ class Produtos:
         conexao.close()
 
         return resultado
+    
+    def categorias(descricao):
+         #Criar conexão
+        conexao = Conexao.criar_conexao()
+
+        # O cursor será responsável por manipular
+        cursor = conexao.cursor(dictionary = True)
+
+        # Criando o sql que será executado
+        sql = """SELECT
+            tbProdutos.nome AS nome_produto,
+            tbProdutos.descricao AS descricao_produto,
+            tbProdutos.preco,
+            tbCategoria.descricao AS categoria_produto
+        FROM
+            tbProdutos
+        INNER JOIN
+            tbCategoria
+            ON tbProdutos.cod_categorias = tbCategoria.cod_categorias
+        WHERE
+            tbCategoria.descricao = %s;"""
+        
+        
+        valores = (descricao, )
+        #Executando o comando sql
+        cursor.execute(sql, valores)        
+
+        #Recuperando os dados e jogando em uma varialvel
+        resultado = cursor.fetchall()
+
+        #Fecho a conexão (como não ouve alteração não preciso do commit)
+        conexao.close()
+
+        return resultado
