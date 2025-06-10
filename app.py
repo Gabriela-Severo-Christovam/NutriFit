@@ -38,10 +38,27 @@ def pagina_produtos_especifico(cod_produto):
 def pagina_carrinho():
     if "usuario" in session: 
         carrinho = Carrinho.recuperar_carrinho()
-
         return render_template("pagina-compras.html", carrinho = carrinho )
     else:
         return redirect("/paginalogin")
+    
+
+@app.route("/post/addcarrinho/<cod_produto>", methods= ["POST"])
+def addcarrinho(cod_produto):
+    produtos_carrinho = Carrinho.adicionar_carrinho(cod_produto)
+    return render_template("pagina-produto-especifico.html", produtos_carrinho = produtos_carrinho)
+
+# @app.route("/carrinho")
+# def carrinho():
+#     recuperar_carrinho = Carrinho.recuperar_carrinho()
+#     return render_template("pagina-compras.html", recuperar_carrinho = recuperar_carrinho)
+
+
+@app.route("/limparcarrinho/<cod_carrinho>")
+def limpar_carrinho(cod_carrinho):
+    deletar = Carrinho.deletar_carrinho(cod_carrinho)
+    return render_template("pagina-compras.html", deletar = deletar)
+
     
 @app.route("/paginalogin")
 def paginalogin():
@@ -50,7 +67,6 @@ def paginalogin():
 @app.route("/paginacadastro")
 def paginacadastro():
     return render_template("pagina-cadastro.html")   
-
 
 
 @app.route("/post/cadastrarusuario", methods= ["POST"])
@@ -84,7 +100,8 @@ def post_logar():
 @app.route("/deslogar")
 def deslogar():
     session.clear()
-    return redirect("/")  
+    return redirect("/") 
+
 
 @app.route("/post/cadastrarcomentario", methods = ["POST"])
 def post_comentario():

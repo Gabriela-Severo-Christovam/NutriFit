@@ -119,15 +119,16 @@
             <!-- CORRIGIR: add jinja -->
             <!-- informações do produto -->
             <div class="product__details">
-                <h1 class="product__name">Nome do Produto</h1>
+                <form action="/post/addcarrinho/{{produto.cod_produto}}" method="POST">
+                <h1 class="product__name">{{produto.nome}}</h1>
                 <!-- descrição do produto e classificação dele (filtro) -->
-                <p class="product__type">nutrition<br>
-                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestiae ipsa asperiores repudiandae amet
-                    dolor, illo, laboriosam doloremque ratione possimus, eos reiciendis veniam deserunt sed laudantium
-                    quod laborum excepturi quibusdam quaerat.</p>
-                <p class="product__price h3 fw-bold">R$139,90</p>
+                <p class="product__type">Informações<br>{{produto.descricao_produto}}</p>
+                <p class="product__price h3 fw-bold">R$ {{produto.preco}}</p>
                 <button class="btn btn-success product__buy">Adicionar ao carrinho</button>
+                </form>
             </div>
+        {% endfor %}
+        
         </section>
 
         <!-- comentários -->
