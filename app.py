@@ -25,7 +25,7 @@ def pagina_recuperar():
     produtos = Produtos.recuperar_produtos()
     return render_template("pagina-produtos.html", produtos = produtos)
 
-#TERMINAR
+
 @app.route("/paginaprodutoespecifico/<cod_produto>")
 def pagina_produtos_especifico(cod_produto):
     produtos = Produtos.recuperar_produto_especifico(cod_produto)

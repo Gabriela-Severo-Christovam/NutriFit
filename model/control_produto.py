@@ -22,7 +22,8 @@ class Produtos:
             INNER JOIN tbCategoria
                 ON tbProdutos.cod_categorias = tbCategoria.cod_categorias
             INNER JOIN tbFotosProdutos
-                ON tbProdutos.cod_produto = tbFotosProdutos.cod_produto;
+                ON tbProdutos.cod_produto = tbFotosProdutos.cod_produto
+            GROUP BY tbProdutos.cod_produto;
             """
         
         #Executando o comando sql
