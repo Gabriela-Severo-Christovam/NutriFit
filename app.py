@@ -29,7 +29,7 @@ def pagina_recuperar():
 @app.route("/paginaprodutoespecifico/<cod_produto>")
 def pagina_produtos_especifico(cod_produto):
     produtos = Produtos.recuperar_produto_especifico(cod_produto)
-    return render_template("pagina-produtos-especifico.html", produtos = produtos)
+    return render_template("pagina-produto-especifico.html", produtos = produtos)
 
 
 # ROTA QUE SÓ ENTRA NO CARRINHO SE ESTIVER LOGADO
