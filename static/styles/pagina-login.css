@@ -54,6 +54,7 @@ header {
   color: var(--cor-accent);
 }
 
+/* /////////////////////////////////////////////////////////////////login/////////////////////////////////////////////////////////////////// */
 .login {
   display: flex;
   justify-content: center;
@@ -101,23 +102,3 @@ header {
   font-weight: 600;
 }
 
-/* //////////////////////////////////////////////////////// footer  /////////////////////////////////////////////////////////////////////////*/
-footer {
-  background-color: var(--cor-header);
-  color: var(--cor-white);
-  text-align: center;
-  padding: 1.5rem 1rem;
-
-}
-
-.footer__link {
-  color: var(--cor-white);
-  text-decoration: none;
-  margin: 0 1rem;
-  font-weight: 2500;
-  transition: color var(--transition-padrao);
-}
-
-.footer__link:hover {
-  color: var(--cor-accent);
-}
