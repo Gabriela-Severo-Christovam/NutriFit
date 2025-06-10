@@ -1,0 +1,109 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--cor-white);
+  color: var(--cor-black);
+}
+
+/* //////////////////////////////////////////////////////// header  /////////////////////////////////////////////////////////////////////////*/
+header {
+  background-color: var(--cor-header);
+  padding: 1rem 0;
+}
+
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 2rem;
+}
+
+.header__logo-image {
+  height: 60px;
+}
+
+.header__nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.header__link {
+  color: var(--cor-white);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-padrao);
+}
+
+.header__link:hover {
+  color: var(--cor-accent);
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 70vh;
+  padding: 2rem 1rem;
+}
+
+.login__form {
+  background-color: var(--cor-accent);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login__btn,
+.login__register-btn {
+  width: 100%;
+  font-weight: 600;
+}
+
+.login__register-btn {
+  background-color: var(--cor-secundaria);
+  color: var(--cor-white);
+}
+
+.login__btn {
+  background-color: var(--cor-secundaria);
+  color: var(--cor-white);
+}
+
+.login__btn:hover {
+  background-color: var(--cor-header);
+  color: var(--cor-white);
+}
+
+.login__register-btn:hover {
+  background-color: var(--cor-header);
+  color: var(--cor-white);
+}
+
+.login__form .form-label {
+  font-weight: 600;
+}
+
+/* //////////////////////////////////////////////////////// footer  /////////////////////////////////////////////////////////////////////////*/
+footer {
+  background-color: var(--cor-header);
+  color: var(--cor-white);
+  text-align: center;
+  padding: 1.5rem 1rem;
+
+}
+
+.footer__link {
+  color: var(--cor-white);
+  text-decoration: none;
+  margin: 0 1rem;
+  font-weight: 2500;
+  transition: color var(--transition-padrao);
+}
+
+.footer__link:hover {
+  color: var(--cor-accent);
+}
