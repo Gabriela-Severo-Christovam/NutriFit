@@ -29,7 +29,8 @@ def pagina_recuperar():
 @app.route("/paginaprodutoespecifico/<cod_produto>")
 def pagina_produtos_especifico(cod_produto):
     produtos = Produtos.recuperar_produto_especifico(cod_produto)
-    return render_template("pagina-produto-especifico.html", produtos = produtos)
+    mensagens = Mensagem.recuperar_mensagems()
+    return render_template("pagina-produto-especifico.html", produtos = produtos,  mensagens = mensagens)
 
 
 # ROTA QUE SÓ ENTRA NO CARRINHO SE ESTIVER LOGADO
@@ -110,20 +111,20 @@ def pagina_principal():
         return redirect("/paginaprodutoespecifico/<cod_produto>")
     
 # CORRIGIR...
-@app.route("/delete/mensagem/<codigo>")
-def delete_mensagem(codigo):
-    Mensagem.deletar_mensagem(codigo)
-    return redirect("/comentario")
+# @app.route("/delete/mensagem/<codigo>")
+# def delete_mensagem(codigo):
+#     Mensagem.deletar_mensagem(codigo)
+#     return redirect("/comentario")
 
-@app.route("/put/mensagem/adicionar/curtida/<codigo>")
-def adicionar_curtida(codigo):
-    Mensagem.adicionar_curtida(codigo)
-    return redirect("/comentario")
+# @app.route("/put/mensagem/adicionar/curtida/<codigo>")
+# def adicionar_curtida(codigo):
+#     Mensagem.adicionar_curtida(codigo)
+#     return redirect("/comentario")
 
-@app.route("/put/mensagem/deletar/curtida/<codigo>")
-def deletar_curtida(codigo):
-    Mensagem.deletar_curtida(codigo)
-    return redirect("/comentario")
+# @app.route("/put/mensagem/deletar/curtida/<codigo>")
+# def deletar_curtida(codigo):
+#     Mensagem.deletar_curtida(codigo)
+#     return redirect("/comentario")
 
 
-app.run()
+app.run(debug=True)
