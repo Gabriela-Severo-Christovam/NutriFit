@@ -86,7 +86,7 @@ def deslogar():
 @app.route("/post/cadastrarcomentario", methods = ["POST"])
 def post_comentario():
     # Peguei as informações vinda do usuário
-    usuario = request.form.get("nome")  # ENTRE () NOME QUE COLOQUEI NO HTML
+    usuario =  session['usuario']  # ENTRE () NOME QUE COLOQUEI NO HTML
     comentario = request.form.get("comentario")
 
     # Cadastrando a mensagem usando a classe mensagem

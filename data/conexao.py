@@ -12,10 +12,18 @@ class Conexao:
         
         
         # Criando a conexão com o banco de dados
-        conexao = mysql.connector.connect(host = "localhost",
-                                        port = 3306,
-                                        user = "root",
-                                        password = "root",
-                                        database = "dbNutriFit")
+        # conexao = mysql.connector.connect(host = "localhost",
+        #                                 port = 3306,
+        #                                 user = "root",
+        #                                 password = "root",
+        #                                 database = "dbNutriFit")
+        
+        conexao = mysql.connector.connect(host = "bdnutrifit-nutrifit.c.aivencloud.com",
+                                        port = 19284,
+                                        user = "avnadmin",
+                                        password = "AVNS_JYqgtjLoovtRs3_GrDj",
+                                        database = "defaultdb")
+        
+        
         
         return conexao
