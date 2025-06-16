@@ -60,8 +60,7 @@ class Produtos:
             INNER JOIN tbFotosProdutos
                 ON tbProdutos.cod_produto = tbFotosProdutos.cod_produto
             WHERE 
-                tbProdutos.cod_produto = %s
-            LIMIT 1;
+                tbProdutos.cod_produto = %s;
             """
 
         valores = (cod_produto, )
