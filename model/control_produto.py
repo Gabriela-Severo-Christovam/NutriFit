@@ -92,7 +92,7 @@ class Produtos:
             JOIN 
                 tbProdutos p ON f.cod_produto = p.cod_produto
             WHERE 
-                f.cod_foto IN (12, 13, 14, 16);"""
+                f.cod_foto IN (1, 3, 4, 6);"""
 
       
         #Executando o comando sql
