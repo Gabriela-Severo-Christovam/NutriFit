@@ -107,17 +107,18 @@ def deslogar():
     return redirect("/") 
 
 
-@app.route("/post/cadastrarcomentario", methods = ["POST"])
-def post_comentario():
+@app.route("/post/cadastrarcomentario/<cod_produto>", methods = ["POST"])
+def post_comentario(cod_produto):
     # Peguei as informações vinda do usuário
     usuario =  session['usuario']  # ENTRE () NOME QUE COLOQUEI NO HTML
     comentario = request.form.get("comentario")
 
     # Cadastrando a mensagem usando a classe mensagem
     Mensagem.cadastrar_mensagem(usuario, comentario)
+    Produtos.recuperar_produto_especifico(cod_produto)
     
     # Redireciona para o index
-    return redirect("/paginaprodutoespecifico/<cod_produto>")
+    return redirect(f"/paginaprodutoespecifico/{cod_produto}")
 
 
 @app.route("/comentario")

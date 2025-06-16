@@ -143,9 +143,9 @@
         {% endfor %}
 
         <!-- adicionar comentário -->
-       
+       {% for produto in produtos %}
         <section class="comment container mb-5">
-            <form action="/post/cadastrarcomentario" method="POST">
+            <form action="/post/cadastrarcomentario/{{produto.cod_produto}}" method="POST">
                 <h5 class="comment__title">Adicionar um comentário</h5>
                 <div class="mb-3">
                     <textarea name="comentario" class="form-control comment__input" id="inputComentario" rows="3"
@@ -154,6 +154,7 @@
                 <button class="btn comment__btn">enviar</button>
             </form>
         </section>
+        {% endfor %}
     </main>
 
     <!-- colocar o whatsapp de algúem apenas p embelezar o site -->
