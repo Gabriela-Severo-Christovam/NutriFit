@@ -17,7 +17,6 @@ def pagina_inicial():
     produto_fotos = Produtos.exibir_produto()
     return render_template("pagina-inicial.html", produtos = produtos, produto_fotos = produto_fotos)
 
-
 @app.route("/paginaprodutos")
 def pagina_produtos():
     return redirect("/produtos")
