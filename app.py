@@ -55,11 +55,6 @@ def mostrar_produtos(cod_produto):
     return render_template('pagina-produto-especifico.html', produtos=produtos)
 
 
-# @app.route("/limparcarrinho/<cod_carrinho>")
-# def limpar_carrinho(cod_carrinho):
-#     deletar = Carrinho.deletar_carrinho(cod_carrinho)
-#     return render_template("pagina-compras.html", deletar = deletar)
-
 @app.route("/limparcarrinho/<cod_carrinho>")
 def limpar_carrinho(cod_carrinho):
     deletar = Carrinho.deletar_carrinho(cod_carrinho) 
@@ -134,21 +129,5 @@ def pagina_principal():
     else:
         return redirect("/paginaprodutoespecifico/<cod_produto>")
     
-# CORRIGIR...
-# @app.route("/delete/mensagem/<codigo>")
-# def delete_mensagem(codigo):
-#     Mensagem.deletar_mensagem(codigo)
-#     return redirect("/comentario")
-
-# @app.route("/put/mensagem/adicionar/curtida/<codigo>")
-# def adicionar_curtida(codigo):
-#     Mensagem.adicionar_curtida(codigo)
-#     return redirect("/comentario")
-
-# @app.route("/put/mensagem/deletar/curtida/<codigo>")
-# def deletar_curtida(codigo):
-#     Mensagem.deletar_curtida(codigo)
-#     return redirect("/comentario")
-
 
 app.run(debug=True)
