@@ -74,3 +74,37 @@ class Produtos:
         conexao.close()
 
         return resultado
+    
+    def exibir_produto():
+        #Criar conexão
+        conexao = Conexao.criar_conexao()
+
+        # O cursor será responsável por manipular
+        cursor = conexao.cursor(dictionary = True)
+
+        # Criando o sql que será executado
+        sql = """
+            SELECT 
+                p.nome AS nome_produto,
+                f.url
+            FROM 
+                tbFotosProdutos f
+            JOIN 
+                tbProdutos p ON f.cod_produto = p.cod_produto
+            WHERE 
+                f.cod_foto IN (12, 13, 14, 16);"""
+
+      
+        #Executando o comando sql
+        cursor.execute(sql)        
+
+        #Recuperando os dados e jogando em uma varialvel
+        resultado = cursor.fetchall()
+
+        #Fecho a conexão (como não ouve alteração não preciso do commit)
+        conexao.close()
+
+        return resultado
+    
+   
+   
