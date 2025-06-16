@@ -83,7 +83,16 @@ class Produtos:
         cursor = conexao.cursor(dictionary = True)
 
         # Criando o sql que será executado
-        sql = """SELECT url FROM tbfotosprodutos WHERE cod_foto IN (1, 2, 3);"""
+        sql = """
+            SELECT 
+                p.nome AS nome_produto,
+                f.url
+            FROM 
+                tbFotosProdutos f
+            JOIN 
+                tbProdutos p ON f.cod_produto = p.cod_produto
+            WHERE 
+                f.cod_foto IN (12, 13, 14, 16);"""
 
       
         #Executando o comando sql
