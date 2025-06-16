@@ -110,6 +110,10 @@ def deslogar():
 @app.route("/post/cadastrarcomentario/<cod_produto>", methods = ["POST"])
 def post_comentario(cod_produto):
     # Peguei as informações vinda do usuário
+
+    if "usuario" not in session:
+        return redirect("/paginalogin") 
+    
     usuario =  session['usuario']  # ENTRE () NOME QUE COLOQUEI NO HTML
     comentario = request.form.get("comentario")
 
