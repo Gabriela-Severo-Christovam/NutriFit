@@ -45,23 +45,25 @@ def pagina_carrinho():
         return redirect("/paginalogin")
     
 
-@app.route("/post/addcarrinho/<cod_produto>", methods= ["POST"])
+@app.route("/post/addcarrinho/<cod_produto>", methods=["POST"])
 def addcarrinho(cod_produto):
-    produtos_carrinho = Carrinho.adicionar_carrinho(cod_produto)
-    return render_template("pagina-produto-especifico.html", produtos_carrinho = produtos_carrinho)
+    Carrinho.adicionar_carrinho(cod_produto)
+    return redirect(f"/produtosespecificocarrinho/{cod_produto}")
 
-# @app.route("/carrinho")
-# def carrinho():
-#     recuperar_carrinho = Carrinho.recuperar_carrinho()
-#     return render_template("pagina-compras.html", recuperar_carrinho = recuperar_carrinho)
+
+@app.route("/produtosespecificocarrinho/<cod_produto>")
+def mostrar_produtos(cod_produto):
+    produtos = Produtos.recuperar_produto_especifico(cod_produto)
+    return render_template('pagina-produto-especifico.html', produtos=produtos)
 
 
 @app.route("/limparcarrinho/<cod_carrinho>")
 def limpar_carrinho(cod_carrinho):
-    deletar = Carrinho.deletar_carrinho(cod_carrinho)
-    return render_template("pagina-compras.html", deletar = deletar)
+    deletar = Carrinho.deletar_carrinho(cod_carrinho) 
+    carrinho = Carrinho.recuperar_carrinho()
+    return render_template("pagina-compras.html", deletar=deletar, carrinho=carrinho)
 
-    
+
 @app.route("/paginalogin")
 def paginalogin():
     return render_template("pagina-login.html")   
@@ -129,21 +131,5 @@ def pagina_principal():
     else:
         return redirect("/paginaprodutoespecifico/<cod_produto>")
     
-# CORRIGIR...
-# @app.route("/delete/mensagem/<codigo>")
-# def delete_mensagem(codigo):
-#     Mensagem.deletar_mensagem(codigo)
-#     return redirect("/comentario")
-
-# @app.route("/put/mensagem/adicionar/curtida/<codigo>")
-# def adicionar_curtida(codigo):
-#     Mensagem.adicionar_curtida(codigo)
-#     return redirect("/comentario")
-
-# @app.route("/put/mensagem/deletar/curtida/<codigo>")
-# def deletar_curtida(codigo):
-#     Mensagem.deletar_curtida(codigo)
-#     return redirect("/comentario")
-
 
 app.run(debug=True)
