@@ -29,7 +29,10 @@
 
    <link rel="stylesheet" href="/static/styles/variables.css">
 
-   <link rel="stylesheet" href="/static/styles/footer.css">/////////////////////////////////////////////////////////////////// -->
+   <link rel="stylesheet" href="/static/styles/footer.css">
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous" defer></script>
+    <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
 </head>
 
 <body>
@@ -94,18 +97,11 @@
             
             <div id="carouselFotos" class="carousel slide product__image" data-bs-ride="carousel">
                 <div class="carousel-inner rounded">
-                    <div class="carousel-item active">
-                        <img src="https://www.kejietechnology.com/upload/image/20241016/1729077644217924.jpg" class="d-block w-100" alt="Imagem 1">
-                    </div>
-                    <div class="carousel-item active">
-                        <img src="https://www.kejietechnology.com/upload/image/20241016/1729077644217924.jpg" class="d-block w-100" alt="Imagem 1">
-                    </div>
                     {% for produto in produtos %}
-                    <div class="carousel-item">
-                        <img src="{{produto.url_foto}}" class="d-block w-100" alt="Imagem 2">
+                    <div class="carousel-item {% if loop.first %}active{% endif %}">
+                        <img src="{{ produto.url_foto }}" class="d-block w-100" alt="Imagem do produto">
                     </div>
                     {% endfor %}
-
                 </div> 
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselFotos"
                     data-bs-slide="prev">
@@ -147,9 +143,9 @@
         {% endfor %}
 
         <!-- adicionar comentário -->
-       
+       {% for produto in produtos %}
         <section class="comment container mb-5">
-            <form action="/post/cadastrarcomentario" method="POST">
+            <form action="/post/cadastrarcomentario/{{produto.cod_produto}}" method="POST">
                 <h5 class="comment__title">Adicionar um comentário</h5>
                 <div class="mb-3">
                     <textarea name="comentario" class="form-control comment__input" id="inputComentario" rows="3"
@@ -158,6 +154,7 @@
                 <button class="btn comment__btn">enviar</button>
             </form>
         </section>
+        {% endfor %}
     </main>
 
     <!-- colocar o whatsapp de algúem apenas p embelezar o site -->

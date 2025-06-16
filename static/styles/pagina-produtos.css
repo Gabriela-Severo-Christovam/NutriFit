@@ -73,8 +73,8 @@ header {
 }
 
 .products__image {
-  width: 100%;
-  height: auto;
+  width: 90%;
+  height: 250px;
   border-radius: var(--border-radius);
 }
 

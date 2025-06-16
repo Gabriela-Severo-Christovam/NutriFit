@@ -62,13 +62,17 @@ header {
   position: relative;
   width: 100%;
   overflow: hidden;
+  
+ 
 }
 
 .banner__image {
   width: 100%;
-  height: auto;
+  height: 570px;
   display: block;
+  
 }
+
 
 .banner__arrow {
   position: absolute;
@@ -135,8 +139,10 @@ header {
 }
 
 .products__image {
-  max-width: 100%;
-  height: auto;
+ 
+  /* height: auto; */
+  width: 90%;
+  height: 200px;
   border-radius: 4px;
 }
 
@@ -145,9 +151,6 @@ header {
   font-weight: bold;
 }
 
-.products__button-wrapper {
-  margin-top: 1rem;
-}
 
 .products__button {
   background-color: var(--cor-secundaria);
@@ -158,6 +161,11 @@ header {
   cursor: pointer;
   font-weight: 500;
   transition: background-color var(--transition-padrao);
+}
+
+.products__button-wrapper {
+  width: 100%;
+  text-align: center;
 }
 
 .products__button:hover {

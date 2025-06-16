@@ -13,7 +13,9 @@ app.secret_key = "seila"
 @app.route("/")
 @app.route("/paginainicial")
 def pagina_inicial():
-    return render_template("pagina-inicial.html")
+    produtos = Produtos.recuperar_produtos()
+    produto_fotos = Produtos.exibir_produto()
+    return render_template("pagina-inicial.html", produtos = produtos, produto_fotos = produto_fotos)
 
 
 @app.route("/paginaprodutos")
@@ -43,23 +45,25 @@ def pagina_carrinho():
         return redirect("/paginalogin")
     
 
-@app.route("/post/addcarrinho/<cod_produto>", methods= ["POST"])
+@app.route("/post/addcarrinho/<cod_produto>", methods=["POST"])
 def addcarrinho(cod_produto):
-    produtos_carrinho = Carrinho.adicionar_carrinho(cod_produto)
-    return render_template("pagina-produto-especifico.html", produtos_carrinho = produtos_carrinho)
+    Carrinho.adicionar_carrinho(cod_produto)
+    return redirect(f"/produtosespecificocarrinho/{cod_produto}")
 
-# @app.route("/carrinho")
-# def carrinho():
-#     recuperar_carrinho = Carrinho.recuperar_carrinho()
-#     return render_template("pagina-compras.html", recuperar_carrinho = recuperar_carrinho)
+
+@app.route("/produtosespecificocarrinho/<cod_produto>")
+def mostrar_produtos(cod_produto):
+    produtos = Produtos.recuperar_produto_especifico(cod_produto)
+    return render_template('pagina-produto-especifico.html', produtos=produtos)
 
 
 @app.route("/limparcarrinho/<cod_carrinho>")
 def limpar_carrinho(cod_carrinho):
-    deletar = Carrinho.deletar_carrinho(cod_carrinho)
-    return render_template("pagina-compras.html", deletar = deletar)
+    deletar = Carrinho.deletar_carrinho(cod_carrinho) 
+    carrinho = Carrinho.recuperar_carrinho()
+    return render_template("pagina-compras.html", deletar=deletar, carrinho=carrinho)
 
-    
+
 @app.route("/paginalogin")
 def paginalogin():
     return render_template("pagina-login.html")   
@@ -103,17 +107,22 @@ def deslogar():
     return redirect("/") 
 
 
-@app.route("/post/cadastrarcomentario", methods = ["POST"])
-def post_comentario():
+@app.route("/post/cadastrarcomentario/<cod_produto>", methods = ["POST"])
+def post_comentario(cod_produto):
     # Peguei as informações vinda do usuário
+
+    if "usuario" not in session:
+        return redirect("/paginalogin") 
+    
     usuario =  session['usuario']  # ENTRE () NOME QUE COLOQUEI NO HTML
     comentario = request.form.get("comentario")
 
     # Cadastrando a mensagem usando a classe mensagem
     Mensagem.cadastrar_mensagem(usuario, comentario)
+    Produtos.recuperar_produto_especifico(cod_produto)
     
     # Redireciona para o index
-    return redirect("/paginaprodutoespecifico/<cod_produto>")
+    return redirect(f"/paginaprodutoespecifico/{cod_produto}")
 
 
 @app.route("/comentario")
@@ -127,21 +136,5 @@ def pagina_principal():
     else:
         return redirect("/paginaprodutoespecifico/<cod_produto>")
     
-# CORRIGIR...
-# @app.route("/delete/mensagem/<codigo>")
-# def delete_mensagem(codigo):
-#     Mensagem.deletar_mensagem(codigo)
-#     return redirect("/comentario")
-
-# @app.route("/put/mensagem/adicionar/curtida/<codigo>")
-# def adicionar_curtida(codigo):
-#     Mensagem.adicionar_curtida(codigo)
-#     return redirect("/comentario")
-
-# @app.route("/put/mensagem/deletar/curtida/<codigo>")
-# def deletar_curtida(codigo):
-#     Mensagem.deletar_curtida(codigo)
-#     return redirect("/comentario")
-
 
 app.run(debug=True)
