@@ -83,3 +83,11 @@ header {
   font-weight: bold;
   color: var(--cor-black);
 }
+
+@media(max-width: 414px ){
+  .products__image {
+    width: auto;
+    height: auto;
+   
+  }
+}
