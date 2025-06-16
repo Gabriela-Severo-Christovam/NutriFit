@@ -43,23 +43,30 @@ def pagina_carrinho():
         return redirect("/paginalogin")
     
 
-@app.route("/post/addcarrinho/<cod_produto>", methods= ["POST"])
+@app.route("/post/addcarrinho/<cod_produto>", methods=["POST"])
 def addcarrinho(cod_produto):
-    produtos_carrinho = Carrinho.adicionar_carrinho(cod_produto)
-    return render_template("pagina-produto-especifico.html", produtos_carrinho = produtos_carrinho)
+    Carrinho.adicionar_carrinho(cod_produto)
+    return redirect(f"/produtosespecificocarrinho/{cod_produto}")
 
-# @app.route("/carrinho")
-# def carrinho():
-#     recuperar_carrinho = Carrinho.recuperar_carrinho()
-#     return render_template("pagina-compras.html", recuperar_carrinho = recuperar_carrinho)
 
+@app.route("/produtosespecificocarrinho/<cod_produto>")
+def mostrar_produtos(cod_produto):
+    produtos = Produtos.recuperar_produto_especifico(cod_produto)
+    return render_template('pagina-produto-especifico.html', produtos=produtos)
+
+
+# @app.route("/limparcarrinho/<cod_carrinho>")
+# def limpar_carrinho(cod_carrinho):
+#     deletar = Carrinho.deletar_carrinho(cod_carrinho)
+#     return render_template("pagina-compras.html", deletar = deletar)
 
 @app.route("/limparcarrinho/<cod_carrinho>")
 def limpar_carrinho(cod_carrinho):
-    deletar = Carrinho.deletar_carrinho(cod_carrinho)
-    return render_template("pagina-compras.html", deletar = deletar)
+    deletar = Carrinho.deletar_carrinho(cod_carrinho) 
+    carrinho = Carrinho.recuperar_carrinho()
+    return render_template("pagina-compras.html", deletar=deletar, carrinho=carrinho)
 
-    
+
 @app.route("/paginalogin")
 def paginalogin():
     return render_template("pagina-login.html")   
