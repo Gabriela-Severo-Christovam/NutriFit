@@ -54,7 +54,8 @@ def addcarrinho(cod_produto):
 @app.route("/produtosespecificocarrinho/<cod_produto>")
 def mostrar_produtos(cod_produto):
     produtos = Produtos.recuperar_produto_especifico(cod_produto)
-    return render_template('pagina-produto-especifico.html', produtos=produtos)
+    fotos = Produtos.recuperar_foto_produto_especifico(cod_produto)
+    return render_template('pagina-produto-especifico.html', produtos=produtos, fotos=fotos)
 
 
 @app.route("/limparcarrinho/<cod_carrinho>")

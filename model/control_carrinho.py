@@ -46,7 +46,7 @@ class Carrinho:
             INNER JOIN
                 tbProdutos ON tbCarrinho.cod_produto = tbProdutos.cod_produto
             INNER JOIN
-                tbFotosProdutos ON tbProdutos.cod_produto = tbFotosProdutos.cod_produto;
+                tbFotosProdutos ON tbProdutos.cod_produto = tbFotosProdutos.cod_produto
             GROUP BY tbProdutos.cod_produto;
             """
                    
