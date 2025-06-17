@@ -1,13 +1,13 @@
-**#NUTRIFIT SUPLEMENTOS**
+# **NUTRIFIT SUPLEMENTOS**
 
 ![Nutrifit logo](https://github.com/user-attachments/assets/43d3ae0f-9aa4-4997-8194-f650719aa2df)
 
 
-**##Descrição**
+## **Descrição**
 O NUTRIFIT SUPLEMENTOS é uma plataforma online desenvolvida para revender suplementos e acessórios fitness. Nosso objetivo é proporcionar uma experiência de compra simples, prática e segura, oferecendo aos nossos usuários acesso a uma vasta gama de produtos de qualidade.
 O site conta com um design responsivo, pensado para facilitar a navegação tanto em dispositivos móveis quanto em desktops.
 
-**##Tecnologias Utilizadas**
+## **Tecnologias Utilizadas**
 Este projeto foi desenvolvido com as seguintes tecnologias:
 
 **HTML:** Para estruturação das páginas.
@@ -21,7 +21,7 @@ Este projeto foi desenvolvido com as seguintes tecnologias:
 **Bootstrap:** Para o desenvolvimento de um layout responsivo e otimizado.
 
 
-**##Funcionalidades**
+## **Funcionalidades**
 O NUTRIFIT SUPLEMENTOS oferece as seguintes funcionalidades:
 
 **Exibição de Produtos:** Através de uma interface limpa, o usuário pode visualizar todos os produtos disponíveis na loja, com detalhes completos de cada item.
@@ -37,7 +37,7 @@ O NUTRIFIT SUPLEMENTOS oferece as seguintes funcionalidades:
 Nosso foco é proporcionar uma navegação intuitiva e agradável, com um design funcional que atenda às necessidades do usuário de forma prática e rápida.
 
 
-**##Como Rodar o Projeto**
+## **Como Rodar o Projeto**
 
 **Clonar o Repositório**
   - git clone https://github.com/Gabriela-Severo-Christovam/NutriFit
