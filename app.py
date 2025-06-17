@@ -30,7 +30,7 @@ def pagina_recuperar():
 @app.route("/paginaprodutoespecifico/<cod_produto>")
 def pagina_produtos_especifico(cod_produto):
     produtos = Produtos.recuperar_produto_especifico(cod_produto)
-    mensagens = Mensagem.recuperar_mensagems()
+    mensagens = Mensagem.recuperar_mensagems(cod_produto)
     fotos = Produtos.recuperar_foto_produto_especifico(cod_produto)
     return render_template("pagina-produto-especifico.html", produtos = produtos,  mensagens = mensagens, fotos = fotos)
 
@@ -121,7 +121,8 @@ def post_comentario(cod_produto):
     comentario = request.form.get("comentario")
 
     # Cadastrando a mensagem usando a classe mensagem
-    Mensagem.cadastrar_mensagem(usuario, comentario)
+    Mensagem.cadastrar_mensagem(usuario, comentario, cod_produto)
+
     Produtos.recuperar_produto_especifico(cod_produto)
     
     # Redireciona para o index

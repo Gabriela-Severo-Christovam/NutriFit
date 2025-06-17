@@ -3,7 +3,7 @@ from data.conexao import Conexao
 
 class Mensagem:
     
-    def  cadastrar_mensagem(usuario, comentario):
+    def  cadastrar_mensagem(usuario, comentario, cod_produto):
 
         data_hora = datetime.datetime.today()
    
@@ -15,12 +15,10 @@ class Mensagem:
         cursor = conexao.cursor()
 
         # Criando o sql que será executado
-        sql = """INSERT INTO tbComentarios
-                    (nome, data_hora, comentario)
-                VALUES
-                    (%s, %s, %s)"""
+        sql = """INSERT INTO tbComentarios (nome, data_hora, comentario, cod_produto)
+                    VALUES (%s, %s, %s, %s);"""
                 
-        valores = (usuario, data_hora, comentario)
+        valores = (usuario, data_hora, comentario, cod_produto)
     
         # Executando o comnado sql
         cursor.execute(sql,valores)
@@ -33,7 +31,7 @@ class Mensagem:
         conexao.close()
 
 
-    def recuperar_mensagems():
+    def recuperar_mensagems(cod_produto):
 
         #Criar conexão 
         conexao = Conexao.criar_conexao()
@@ -42,10 +40,18 @@ class Mensagem:
         cursor = conexao.cursor(dictionary = True)
 
         # Criando o sql que será executado
-        sql = "SELECT cod_comentario, nome AS usuario, comentario, data_hora, curtidas FROM tbComentarios;"
+        sql = """SELECT c.cod_comentario, 
+                    c.nome AS usuario, 
+                    c.comentario, 
+                    c.data_hora, 
+                    c.curtidas, 
+                    p.nome AS nome_produto
+                FROM tbComentarios c
+                INNER JOIN tbProdutos p ON c.cod_produto = p.cod_produto
+                WHERE c.cod_produto = %s;"""
 
         #Executando o comando sql
-        cursor.execute(sql)        
+        cursor.execute(sql, (cod_produto,))        
 
         #Recuperando os dados e jogando em uma varialvel 
         resultado = cursor.fetchall()

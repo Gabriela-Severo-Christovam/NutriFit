@@ -172,6 +172,10 @@ create table tbComentarios (
     curtidas int
 );
 
+ALTER TABLE tbComentarios
+ADD cod_produto INT,
+ADD FOREIGN KEY (cod_produto) REFERENCES tbProdutos(cod_produto);
+
 -- INSERT INTO tbProdutos(nome, descricao, preco, cod_categorias)
 -- VALUES ('Teste', 'oi', 40.90, 4);
 
