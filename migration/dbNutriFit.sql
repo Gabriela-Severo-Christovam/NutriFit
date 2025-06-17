@@ -177,9 +177,9 @@ ADD cod_produto INT,
 ADD FOREIGN KEY (cod_produto) REFERENCES tbProdutos(cod_produto);
 
 -- INSERT INTO tbProdutos(nome, descricao, preco, cod_categorias)
--- VALUES ('Teste', 'oi', 40.90, 4);
+-- VALUES ('Whey', 'O melhor do mercado!', 40.90, 2);
 
 -- SELECT * FROM dbnutrifit.tbprodutos;
 
 -- INSERT INTO tbFotosProdutos (cod_produto, url)
--- VALUES (17, 'https://cdn-icons-png.flaticon.com/512/4552/4552937.png');
+-- VALUES (11, 'https://images.tcdn.com.br/img/img_prod/698210/whey_pro_pote_1kg_max_titanium_779_1_79909b369a86c33196f6c741162ec0ab.jpg');
