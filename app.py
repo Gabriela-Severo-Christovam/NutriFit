@@ -47,6 +47,8 @@ def pagina_carrinho():
 
 @app.route("/post/addcarrinho/<cod_produto>", methods=["POST"])
 def addcarrinho(cod_produto):
+    if "usuario" not in session:
+        return redirect("/paginalogin") 
     Carrinho.adicionar_carrinho(cod_produto)
     return redirect(f"/produtosespecificocarrinho/{cod_produto}")
 
