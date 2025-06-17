@@ -58,18 +58,21 @@
 
     <main>
         <!-- Categorias -->
-        {% for categoria in caterias %}
+        {% for categoria in categorias %}
         <section class="category">
-          <H2>Selecione a categoria:</H2>
-          <a href="/post/categoria/{{categoria.descricao}}">
-            <button>WHEY</button>
-            <button>CREATINA</button>
-            <button>ACESSORIOS</button>
-          </a>
+          <h2>Selecione a categoria:</h2>
+          <form action="/post/categoria/{{categoria.descrição}}" method="get">
+            <select name="categoria" required>
+              
+                <option value="{{ categoria.descricao }}">{{ categoria.descricao }}</option>
+             
+            </select>
+            <button type="submit">Ir</button>
+          </form>
         </section>
         {% endfor %}
-
-        <!-- seção onde irão os produtos -->
+        
+        <!-- seção onde irão os produtos --> 
         <!-- inserir as imagens aqui posteriormente -->
          
         <!-- TERMINAR -->
