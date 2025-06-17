@@ -104,11 +104,17 @@ VALUES ('Blender - Transparente', 'Com design transparente e moderno, a blender 
 # INSERINDO FOTOS DAS CREATINAS
 INSERT INTO tbFotosProdutos (cod_produto, url)
 VALUES (1, 'https://www.oceandrop.com.br/media/catalog/product/cache/e72cb892da97e5433e4edef74373290e/6/4/648x908-creatina300_4.png'),
-       (2, 'https://www.gsuplementos.com.br/upload/produto/layout/70/produto1-creapure250-v2.webp');
+	   (1,'https://www.oceandrop.com.br/media/catalog/product/cache/b8e80b8ab26713fe9633d84839545a38/6/4/648x908-super-box-creatina.png'),
+	   (1, 'https://www.oceandrop.com.br/media/catalog/product/cache/b8e80b8ab26713fe9633d84839545a38/6/4/648x908-creatina300-tabela.jpg'),
+       (2, 'https://www.gsuplementos.com.br/upload/produto/layout/70/produto1-creapure250-v2.webp'),
+       (2, 'https://http2.mlstatic.com/D_NQ_NP_864751-MLB69884251258_062023-O-creatina-250g-creapure-growth-supplements.webp'),
+       (2, 'https://a-static.mlcdn.com.br/800x600/omega-3-75-caps-creatina-pura-100g-creapure-growth/maxpowersuplementos/10943820408/f09ee9ba354f7627685592c23da85d26.jpeg');
 
 # INSERINDO FOTOS DOS WHEY
 INSERT INTO tbFotosProdutos (cod_produto, url)
 VALUES (3, 'https://m.media-amazon.com/images/I/61zXQDYWmcL._AC_SX679_.jpg'),
+	   (3, 'https://lojamaxtitanium.vtexassets.com/arquivos/ids/157349/100-whey-protein-max-titanium-dr-peanut-900g-avela-2.jpg?v=638794607032530000'),
+       (3, 'https://m.media-amazon.com/images/I/61c5axnIEwL._AC_SX679_.jpg'),
        (4, 'https://sanavita.vtexassets.com/arquivos/ids/157824-1600-auto?v=638736935464570000&width=1600&height=auto&aspect=true');
      
      
