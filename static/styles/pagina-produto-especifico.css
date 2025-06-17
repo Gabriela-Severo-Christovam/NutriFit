@@ -92,8 +92,22 @@ header {
   margin-right: 2%;
 }
 
-.comment.container {
+/* .comment.container {
   float: right;
+  right: 44rem;
+  position: relative;
+} */
+
+
+
+
+.reviews.container,
+.comment.container {
+  width: 100%;
+  max-width: 800px; 
+  margin: 0 auto 2rem auto; 
+  display: block;
+  position: static;
 }
 
 .comment__btn {
@@ -111,4 +125,15 @@ header {
   color: var(--cor-white);
 }
 
+.review {
+  background-color: var(--cor-accent); /* Roxo claro */
+  border-radius: 10px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.review__text {
+  margin: 0.5rem 0;
+}
 
