@@ -96,7 +96,7 @@
         <section class="product container py-5 d-flex flex-wrap gap-5 justify-content-center">
             <!-- carrossel -->
             
-            <div id="carouselFotos" class="carousel slide product__image" data-bs-ride="carousel">
+            <!-- <div id="carouselFotos" class="carousel slide product__image" data-bs-ride="carousel">
                 <div class="carousel-inner rounded">
                     {% for produto in produtos %}
                     <div class="carousel-item {% if loop.first %}active{% endif %}">
@@ -105,6 +105,24 @@
                     {% endfor %}
                 </div> 
                
+            </div> -->
+
+            <div id="carouselFotos" class="carousel slide product__image" data-bs-ride="carousel">
+                <div class="carousel-inner rounded">
+                    {% for foto in fotos %}
+                    <div class="carousel-item {% if loop.first %}active{% endif %}">
+                        <img src="{{ foto.url_foto }}" class="d-block w-100" alt="Imagem do produto">
+                    </div>
+                    {% endfor %}
+                </div> 
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselFotos"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselFotos"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
             </div>
             
         {% for produto in produtos %}

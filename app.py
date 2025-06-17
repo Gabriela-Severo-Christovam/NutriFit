@@ -31,7 +31,8 @@ def pagina_recuperar():
 def pagina_produtos_especifico(cod_produto):
     produtos = Produtos.recuperar_produto_especifico(cod_produto)
     mensagens = Mensagem.recuperar_mensagems()
-    return render_template("pagina-produto-especifico.html", produtos = produtos,  mensagens = mensagens)
+    fotos = Produtos.recuperar_foto_produto_especifico(cod_produto)
+    return render_template("pagina-produto-especifico.html", produtos = produtos,  mensagens = mensagens, fotos = fotos)
 
 
 # ROTA QUE SÓ ENTRA NO CARRINHO SE ESTIVER LOGADO
@@ -53,7 +54,8 @@ def addcarrinho(cod_produto):
 @app.route("/produtosespecificocarrinho/<cod_produto>")
 def mostrar_produtos(cod_produto):
     produtos = Produtos.recuperar_produto_especifico(cod_produto)
-    return render_template('pagina-produto-especifico.html', produtos=produtos)
+    fotos = Produtos.recuperar_foto_produto_especifico(cod_produto)
+    return render_template('pagina-produto-especifico.html', produtos=produtos, fotos=fotos)
 
 
 @app.route("/limparcarrinho/<cod_carrinho>")
