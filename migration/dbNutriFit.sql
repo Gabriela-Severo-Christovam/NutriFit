@@ -171,3 +171,9 @@ create table tbComentarios (
     cod_comentario int auto_increment PRIMARY KEY,
     curtidas int
 );
+
+-- INSERT INTO tbProdutos(nome, descricao, preco, cod_categorias)
+-- VALUES ('Teste', 'oi', 40.90, 4);
+
+-- INSERT INTO tbFotosProdutos (cod_produto, url)
+-- VALUES (17, 'https://cdn-icons-png.flaticon.com/512/4552/4552937.png');
